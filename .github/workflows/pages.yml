@@ -1,0 +1,30 @@
+name: Publish Ed Prather demo
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: ed-prather-demo-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: ed-prather-preview
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v5
