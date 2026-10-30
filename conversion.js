@@ -44,7 +44,7 @@
       if(attribution.referrer)target.searchParams.set('ep_ref',attribution.referrer);
       a.href=target.href;
     }
-    if(/^https:\/\/(www\.)?cohousehunters\.com\/$/.test(a.href))window.epTrack('external_home_search_click');
+    if(a.href==='https://www.cohousehunters.com/property-search/')window.epTrack('external_home_search_click');
     if(a.href.startsWith('tel:'))window.epTrack('phone_click');
   });
   const modes={
@@ -60,7 +60,7 @@
     const panel=document.querySelector('#conversion-hero-panel');panel.setAttribute('aria-labelledby',tab.id);
     const primary=document.querySelector('[data-hero-primary]');primary.href=root+data.path+'/index.html';primary.firstElementChild.textContent=data.primary;
     const secondary=document.querySelector('[data-hero-secondary]');secondary.hidden=!data.secondary;
-    if(data.secondary){secondary.textContent=data.secondary+' '+(data.external?'↗':'→');secondary.href=data.external?'https://www.cohousehunters.com/':root+data.secondaryPath+'/index.html';if(data.external){secondary.target='_blank';secondary.rel='noopener noreferrer';}else{secondary.removeAttribute('target');secondary.removeAttribute('rel');}}
+    if(data.secondary){secondary.textContent=data.secondary+' '+(data.external?'↗':'→');secondary.href=data.external?'https://www.cohousehunters.com/property-search/':root+data.secondaryPath+'/index.html';if(data.external){secondary.target='_blank';secondary.rel='noopener noreferrer';}else{secondary.removeAttribute('target');secondary.removeAttribute('rel');}}
     if(focus)tab.focus();
   }
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();activate(tabs[n],true);}});});
