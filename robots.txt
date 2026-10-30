@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Private review preview. Enable production indexing only after launch approval.

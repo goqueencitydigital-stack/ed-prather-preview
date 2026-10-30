@@ -1,0 +1,1 @@
+window.ED_CONFIG={"apiBase":"","reviewOnly":true,"analytics":{"consentRequired":true,"gtmId":"","ga4Id":"","googleAdsSendTo":{},"metaPixelId":""}};if(!window.ED_CONFIG.reviewOnly&&['localhost','127.0.0.1'].includes(location.hostname))window.ED_CONFIG.apiBase='http://127.0.0.1:3001';
