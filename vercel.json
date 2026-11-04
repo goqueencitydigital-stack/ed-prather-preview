@@ -1,0 +1,33 @@
+{
+  "buildCommand": "node -e '\nconst fs=require('\\''node:fs'\\''),path=require('\\''node:path'\\'');\nconst out='\\''dist'\\'';\nfs.mkdirSync(out,{recursive:true});\nfor(const item of fs.readdirSync('\\''.'\\'')) {\n  if(item.startsWith('\\''.'\\'')||['\\''dist'\\'','\\''vercel.json'\\'','\\''node_modules'\\'','\\''package.json'\\'','\\''package-lock.json'\\''].includes(item))continue;\n  fs.cpSync(item,path.join(out,item),{recursive:true});\n}\nif(process.env.VERCEL_ENV==='\\''production'\\'') {\n  const sitemap=fs.readFileSync(path.join(out,'\\''sitemap.xml'\\''),'\\''utf8'\\'');\n  let count=0;\n  for(const match of sitemap.matchAll(/<loc>(.*?)<\\/loc>/g)) {\n    const route=new URL(match[1]).pathname;\n    const file=path.join(out,route,'\\''index.html'\\'');\n    if(!fs.existsSync(file))throw new Error('\\''Missing sitemap page: '\\''+route);\n    const html=fs.readFileSync(file,'\\''utf8'\\'');\n    fs.writeFileSync(file,html.replace('\\''content=\"noindex,nofollow\"'\\'','\\''content=\"index,follow\"'\\''));\n    count++;\n  }\n  fs.writeFileSync(path.join(out,'\\''robots.txt'\\''),'\\''User-agent: *\\nAllow: /\\nSitemap: https://www.edprather.com/sitemap.xml\\n'\\'');\n  console.log('\\''Production indexing enabled for '\\''+count+'\\'' sitemap pages.'\\'');\n}\n'",
+  "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "destination": "/robots-preview.txt"
+    }
+  ]
+}
