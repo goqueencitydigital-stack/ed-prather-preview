@@ -3,6 +3,15 @@
   "outputDirectory": "dist",
   "headers": [
     {
+      "source": "/assets/responsive/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -18,7 +27,7 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
       "source": "/robots.txt",
       "has": [
@@ -27,7 +36,423 @@
           "value": ".*\\.vercel\\.app"
         }
       ],
-      "destination": "/robots-preview.txt"
+      "destination": "/robots-preview.txt",
+      "permanent": false
+    },
+    {
+      "source": "/discovery/tour",
+      "destination": "/schedule-tour/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery/tour/",
+      "destination": "/schedule-tour/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery/tour/index.html",
+      "destination": "/schedule-tour/",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/about/frequently-asked-questions/",
+      "permanent": true
+    },
+    {
+      "source": "/faq/",
+      "destination": "/about/frequently-asked-questions/",
+      "permanent": true
+    },
+    {
+      "source": "/faq/index.html",
+      "destination": "/about/frequently-asked-questions/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent/",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent/index.html",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent/application",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent/application/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/inside-sales-agent/application/index.html",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate/",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate/index.html",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate/application",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate/application/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/licensed-sales-associate/application/index.html",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator/",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator/index.html",
+      "destination": "/about/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator/application",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator/application/",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/about/careers/transaction-coordinator/application/index.html",
+      "destination": "/careers/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/buyer-guide",
+      "destination": "/buyer-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/buyer-guide/",
+      "destination": "/buyer-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/buyer-guide/index.html",
+      "destination": "/buyer-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/form",
+      "destination": "/buy/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/form/",
+      "destination": "/buy/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/form/index.html",
+      "destination": "/buy/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/form",
+      "destination": "/sell/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/form/",
+      "destination": "/sell/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/form/index.html",
+      "destination": "/sell/consultation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/home-valuation",
+      "destination": "/home-valuation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/home-valuation/",
+      "destination": "/home-valuation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/home-valuation/index.html",
+      "destination": "/home-valuation/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/seller-guide",
+      "destination": "/seller-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/seller-guide/",
+      "destination": "/seller-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/seller-guide/index.html",
+      "destination": "/seller-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/index.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/our-team/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/our-team/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/list-your-house",
+      "destination": "/sell/",
+      "permanent": true
+    },
+    {
+      "source": "/list-your-house/",
+      "destination": "/sell/",
+      "permanent": true
+    },
+    {
+      "source": "/list-your-house/index.html",
+      "destination": "/sell/",
+      "permanent": true
+    },
+    {
+      "source": "/buyer-resources",
+      "destination": "/buy/",
+      "permanent": true
+    },
+    {
+      "source": "/buyer-resources/",
+      "destination": "/buy/",
+      "permanent": true
+    },
+    {
+      "source": "/buyer-resources/index.html",
+      "destination": "/buy/",
+      "permanent": true
+    },
+    {
+      "source": "/relocation",
+      "destination": "/relocating-to-denver/",
+      "permanent": true
+    },
+    {
+      "source": "/relocation/",
+      "destination": "/relocating-to-denver/",
+      "permanent": true
+    },
+    {
+      "source": "/relocation/index.html",
+      "destination": "/relocating-to-denver/",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog/",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/category/blog/index.html",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/author/admin-edprather",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/author/admin-edprather/",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/author/admin-edprather/index.html",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/eric-williams",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/eric-williams/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/eric-williams/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/erin-walser",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/erin-walser/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/erin-walser/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/michael-applegate",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/michael-applegate/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/michael-applegate/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/amber-banchongchith",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/amber-banchongchith/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/amber-banchongchith/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/ashley-leavitt",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/ashley-leavitt/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/ashley-leavitt/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/kelly-ettore",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/kelly-ettore/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/kelly-ettore/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/leisel-white",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/leisel-white/",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/agents/profile/leisel-white/index.html",
+      "destination": "/agents/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*/",
+      "permanent": true
     }
   ]
 }
