@@ -71,4 +71,6 @@
    const panel=a.closest('.nav-panel');if(panel)document.getElementById(panel.getAttribute('aria-labelledby')).classList.add('nav-current-section');
   }
  });
+ const currentSections=[...header.querySelectorAll('.nav-current-section')];
+ if(currentSections.length>1)currentSections.forEach(button=>button.classList.remove('nav-current-section'));
 })();
