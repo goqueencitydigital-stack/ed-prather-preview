@@ -12,6 +12,15 @@
 .longform-page .article-content section+section{margin-top:2.75rem}
 .longform-page .article-content p{max-width:72ch}
 .longform-page .article-content a:not(.btn){text-underline-offset:3px}
+/* Article bands have separate label, heading, copy and action children.
+   Do not inherit the generic two-column conversion layout. */
+.longform-page .article-content .conversion-band{display:flex;flex-direction:column;align-items:stretch;gap:16px}
+.longform-page .article-content .conversion-band>.eyebrow,
+.longform-page .article-content .conversion-band>h2,
+.longform-page .article-content .conversion-band>p{margin:0}
+.longform-page .article-content .conversion-band>p{width:100%;max-width:60ch}
+.longform-page .article-content .conversion-band>.btn{align-self:flex-start;width:fit-content;max-width:100%;margin-top:8px;text-align:center}
+@media(max-width:600px){.longform-page .article-content .conversion-band>.btn{width:100%}}
 .longform-page .article-table{overflow:auto;max-width:100%;margin:1.5rem 0 2rem;border:1px solid #d7e1e1;border-radius:.5rem;background:#fff}
 .longform-page .article-table table{width:100%;min-width:570px;border-collapse:collapse;font-size:.9375rem;line-height:1.6}
 .longform-page .article-table th,.longform-page .article-table td{padding:1rem;text-align:left;vertical-align:top;border-bottom:1px solid #d7e1e1}
