@@ -3,6 +3,15 @@
   "outputDirectory": "dist",
   "headers": [
     {
+      "source": "/styles-:hash.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/assets/responsive/(.*)",
       "headers": [
         {
@@ -277,21 +286,6 @@
     {
       "source": "/list-your-house/index.html",
       "destination": "/sell/",
-      "permanent": true
-    },
-    {
-      "source": "/buyer-resources",
-      "destination": "/buy/",
-      "permanent": true
-    },
-    {
-      "source": "/buyer-resources/",
-      "destination": "/buy/",
-      "permanent": true
-    },
-    {
-      "source": "/buyer-resources/index.html",
-      "destination": "/buy/",
       "permanent": true
     },
     {

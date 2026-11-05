@@ -1,0 +1,25 @@
+.resource-hub .hub-introduction{max-width:860px;padding:64px 0 52px}
+.resource-hub .hub-introduction h2,.hub-chapter h2,.hub-next h2{font-size:clamp(29px,3vw,44px);line-height:1.2;letter-spacing:-.025em;text-wrap:balance;margin:14px 0 24px}
+.resource-hub p{font-size:18px;line-height:1.8;color:#5a6268}
+.hub-chapter{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,108px);padding:64px 0;border-top:1px solid #dbe3e2;scroll-margin-top:130px}
+.hub-chapter-intro>p{margin-bottom:20px}
+.hub-chapter-intro>.text-link{display:inline-block;margin-top:10px}
+.hub-reading{list-style:none!important;padding:0!important;margin:0!important}
+.hub-reading li{padding:22px 0;border-bottom:1px solid #dbe3e2;margin:0!important}
+.hub-reading li:first-child{padding-top:0}
+.hub-reading a{font-size:21px;line-height:1.45;font-weight:750;color:#212529;text-decoration:none;display:inline-block}
+.hub-reading a:hover,.hub-reading a:focus-visible{color:#176b68;text-decoration:underline}
+.hub-reading li p{font-size:16px!important;line-height:1.7!important;margin:9px 0 0!important}
+.hub-next{padding:48px clamp(24px,4vw,64px);background:#f0f6f5;border-top:4px solid #3fb6b2;margin:32px 0 88px}
+.hub-next>p{max-width:80ch}
+.hub-next .hub-note{font-size:15px;margin:28px 0 0}
+.resource-context{margin:52px 0;padding:32px;border-top:3px solid #3fb6b2;background:#f0f6f5}
+.article-content .resource-context h2{margin-top:12px;font-size:30px}
+.resource-context .hub-reading{margin:28px 0!important}
+.resource-context .hub-reading a{font-size:19px}
+.resource-context-links{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.process-reading{padding:0 0 22px}
+.process-reading a{font-size:16px}
+.hub-journal-links{margin-top:26px}
+.resource-hub #tools,.resource-hub #reading{scroll-margin-top:130px}
+@media(max-width:760px){.hub-chapter{grid-template-columns:1fr;gap:30px;padding:40px 0}.resource-hub .hub-introduction{padding:40px 0}.resource-hub p{font-size:17px}.hub-reading a{font-size:20px}.hub-next{margin-bottom:48px;padding:30px 22px}.resource-context{padding:24px 20px}.hub-editorial .service-nav{position:static}.hub-chapter,.resource-hub #tools,.resource-hub #reading{scroll-margin-top:100px}}
