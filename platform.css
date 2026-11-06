@@ -231,3 +231,7 @@ dialog h2{font-size:38px}dialog p{font-size:18px}dialog .small{font-size:15px}
  dialog h2{font-size:29px}dialog p{font-size:17px}dialog .small{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){.place-photo img{transition:none}}
+.footer-attribution{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+.footer .footer-credit{color:inherit;font-weight:600;line-height:1.5;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;max-width:100%}
+.footer .footer-credit:hover{color:#3fb6b2;text-decoration-color:currentColor}
+.footer .footer-credit:focus-visible{outline:2px solid #3fb6b2;outline-offset:5px;text-decoration-color:currentColor}
