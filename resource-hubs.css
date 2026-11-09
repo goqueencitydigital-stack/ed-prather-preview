@@ -4,6 +4,8 @@
 .hub-chapter{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,108px);padding:64px 0;border-top:1px solid #dbe3e2;scroll-margin-top:130px}
 .hub-chapter-intro>p{margin-bottom:20px}
 .hub-chapter-intro>.text-link{display:inline-block;margin-top:10px}
+.hub-chapter-intro [data-contextual-reading] a{color:#176b68;text-decoration:underline;text-underline-offset:3px}
+.hub-chapter-intro [data-contextual-reading] a:hover{color:#212529}
 .hub-reading{list-style:none!important;padding:0!important;margin:0!important}
 .hub-reading li{padding:22px 0;border-bottom:1px solid #dbe3e2;margin:0!important}
 .hub-reading li:first-child{padding-top:0}
