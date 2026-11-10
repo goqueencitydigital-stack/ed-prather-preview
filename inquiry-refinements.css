@@ -1,0 +1,9 @@
+.inquiry-hero-note{max-width:650px;margin:22px 0 0;font-size:14px;line-height:1.6;opacity:.9}
+.inquiry-proof-link{margin-top:28px;font-size:16px;line-height:1.8}
+.inquiry-proof-link a{text-underline-offset:4px}
+.analytics-preferences{display:block;margin:0 auto;padding:18px 24px;background:transparent;color:inherit;border:0;font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.analytics-preferences:focus-visible,.tracking-consent button:focus-visible{outline:3px solid #176b68;outline-offset:4px}
+.tracking-consent{max-height:calc(100dvh - 110px);overflow:auto}
+.tracking-consent button{background:#fff;color:#176b68;font:inherit;cursor:pointer}
+.tracking-consent div{flex-wrap:wrap}
+@media(max-width:480px){.tracking-consent{padding:18px}.tracking-consent button{flex:1;white-space:nowrap;padding:11px 12px}.inquiry-hero-note{font-size:13px}.inquiry-proof-link a{display:inline-block}}
