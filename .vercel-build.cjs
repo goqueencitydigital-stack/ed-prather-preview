@@ -6,7 +6,15 @@ for(const item of fs.readdirSync('.')) {
   if(item.startsWith('.')||['dist','vercel.json','node_modules','package.json','package-lock.json'].includes(item))continue;
   fs.cpSync(item,path.join(out,item),{recursive:true});
 }
-if(process.env.VERCEL_ENV==='production') {
+const configPath=path.join(out,'site-config.js');
+const production=process.env.VERCEL_ENV==='production';
+if(fs.existsSync(configPath)){
+  const config=fs.readFileSync(configPath,'utf8');
+  if(production&&!config.includes('"apiBase":"https://ed-prather-form-api.vercel.app"'))
+    throw new Error('Production requires the configured lead API.');
+  fs.writeFileSync(configPath,config.replace(/"reviewOnly":(?:true|false)/,'"reviewOnly":'+!production));
+}
+if(production) {
   const sitemap=fs.readFileSync(path.join(out,'sitemap.xml'),'utf8');
   let count=0;
   for(const match of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {

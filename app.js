@@ -1,4 +1,5 @@
 const root=window.SITE_ROOT||'./';
+const toolVersion=document.currentScript?.dataset.toolsVersion||'';
 const $=(s,el=document)=>el.querySelector(s);
 const $$=(s,el=document)=>[...el.querySelectorAll(s)];
 const track=(event,extra={})=>window.epTrack?.(event,extra);
@@ -20,4 +21,4 @@ function showReview(){if(!reviews.length||!$('#review-quote'))return;$('#review-
 $$('[data-review]').forEach(b=>b.addEventListener('click',()=>{r=(r+Number(b.dataset.review)+reviews.length)%reviews.length;showReview();}));showReview();
 function download(name,text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 $$('img').forEach(i=>i.addEventListener('error',()=>{i.style.visibility='hidden';i.parentElement?.classList.add('image-unavailable');}));
-if($('#tool-root')){import(new URL(root+'tools.js',window.location.href).href).then(m=>m.initTools()).catch(error=>{console.error('Planning tool initialization failed:',error);$('#tool-root').innerHTML='<div class="notice">This interactive tool could not load. Please refresh, or <a href="'+root+'contact/index.html">contact the team</a> for help.</div>';});}
+if($('#tool-root')){import(new URL(root+'tools.js?v='+toolVersion,window.location.href).href).then(m=>m.initTools()).catch(error=>{console.error('Planning tool initialization failed:',error);$('#tool-root').innerHTML='<div class="notice">This interactive tool could not load. Please refresh, or <a href="'+root+'contact/">contact the team</a> for help.</div>';});}

@@ -1,7 +1,7 @@
 /* Browser-only planning tools. No personal data is sent to a service or persisted. */
 const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const site = path => `${typeof window !== 'undefined' ? (window.SITE_ROOT || './') : './'}${path}`;
-const toolPath = type => site(`discovery/${type}/index.html`);
+const toolPath = type => site(`discovery/${type}/`);
 const listingSearch = 'https://www.cohousehunters.com/property-search/results/';
 const money = n => new Intl.NumberFormat('en-US', {style:'currency', currency:'USD', maximumFractionDigits:0}).format(n);
 const num = (data, key) => Number(data[key] || 0);
