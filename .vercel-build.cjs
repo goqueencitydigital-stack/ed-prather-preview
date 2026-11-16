@@ -22,7 +22,14 @@ if(production) {
     const file=path.join(out,route,'index.html');
     if(!fs.existsSync(file))throw new Error('Missing sitemap page: '+route);
     const html=fs.readFileSync(file,'utf8');
-    fs.writeFileSync(file,html.replace('content="noindex,nofollow"','content="index,follow"'));
+    let live=html.replace('content="noindex,nofollow"','content="index,follow"');
+    if(['/privacy-policy/','/terms/'].includes(route)){
+      live=live.replace(
+        'This review version does not send website inquiries or applications. If you attempt to submit a form, the website reports that delivery is unavailable and that your request has not been sent. You can contact the team by phone or email instead.',
+        'When online delivery is enabled, completed forms pass through the website’s Vercel-hosted backend to Zapier for processing into the team’s Follow Up Boss account. If delivery is unavailable or uncertain, the website displays an error rather than a successful submission.'
+      );
+    }
+    fs.writeFileSync(file,live);
     count++;
   }
   fs.writeFileSync(path.join(out,'robots.txt'),'User-agent: *\nAllow: /\nSitemap: https://www.edprather.com/sitemap.xml\n');
