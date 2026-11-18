@@ -355,6 +355,21 @@
       "permanent": true
     },
     {
+      "source": "/discovery/passport",
+      "destination": "/discovery/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery/passport/",
+      "destination": "/discovery/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery/passport/index.html",
+      "destination": "/discovery/",
+      "permanent": true
+    },
+    {
       "source": "/agents/profile/eric-williams",
       "destination": "/agents/",
       "permanent": true
