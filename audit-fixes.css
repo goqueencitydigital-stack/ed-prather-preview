@@ -1,0 +1,88 @@
+/* Website audit fixes, 2026-11-18 */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Header call button: phones and tablets */
+.nav-call{display:none}
+@media(max-width:1020px){
+ .nav-call{display:inline-flex;align-items:center;gap:7px;margin-left:auto;margin-right:14px;min-height:44px;padding:0 16px;border-radius:999px;background:#3fb6b2;color:#14211f;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+ .nav-call svg{flex:none}
+ .nav-call:hover,.nav-call:focus-visible{background:#36a3a0;color:#14211f}
+ .nav-call+.nav-menu-toggle{margin-left:0}
+}
+@media(max-width:420px){.nav-call{padding:0 13px;margin-right:10px;font-size:14px}}
+
+/* Sticky action bar: phones and tablets, with a call option */
+@media(max-width:1020px){
+ .mobile-conversion-cta{display:flex;position:fixed;z-index:25;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dce4e4;padding:10px 14px max(10px,env(safe-area-inset-bottom));justify-content:center;gap:8px}
+ .mobile-conversion-cta a{flex:1 1 0;justify-content:center;font-size:14px;padding:12px 10px;min-height:46px;white-space:nowrap;max-width:260px}
+ .mobile-conversion-cta a.cta-call{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;padding:12px 16px;border-radius:24px;background:#202427;color:#fff;font-weight:700;text-decoration:none}
+ .mobile-conversion-cta a.cta-call svg{flex:none}
+ body.has-mobile-cta{padding-bottom:78px}
+}
+@media(max-width:380px){.mobile-conversion-cta{gap:6px;padding-left:10px;padding-right:10px}.mobile-conversion-cta a{padding:12px 7px}.mobile-conversion-cta a.cta-call{padding:12px 12px}}
+
+/* Home search handoff note (desktop header) */
+.nav-main .nav-search{position:relative}
+.nav-main .nav-search .nav-search-note{position:absolute;left:0;right:0;top:calc(100% + 5px);text-align:center;font-size:11px!important;line-height:1.2;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#176b68;margin:0!important;white-space:nowrap;pointer-events:none}
+@media(max-width:1020px){.nav-search-note{display:none}}
+
+/* Link from a topic copy to its main page */
+.main-topic-note{display:flex;flex-wrap:wrap;gap:10px 24px;margin:14px 0 6px;padding:14px 18px;border:1px solid #dce4e4;border-left:3px solid #3fb6b2;border-radius:10px;background:#f6f9f9}
+.main-topic-note a{font-weight:600;color:#176b68;text-decoration:none}
+.main-topic-note a:hover{text-decoration:underline}
+
+/* FAQ on tool and form pages */
+.tool-faq .wrap{max-width:900px}
+.tool-faq h2{margin:10px 0 26px}
+.tool-faq-list{border-top:1px solid #dce4e4}
+.tool-faq details{border-bottom:1px solid #dce4e4;padding:4px 0}
+.tool-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;padding:18px 0;font-size:18px;font-weight:600;color:#202427}
+.tool-faq summary::-webkit-details-marker{display:none}
+.tool-faq summary:after{content:"+";font-size:22px;line-height:1;color:#176b68}
+.tool-faq details[open] summary:after{content:"–"}
+.tool-faq details p{margin:0 0 18px;max-width:760px;color:#4b555a;line-height:1.65}
+
+/* Thank-you pages */
+.thank-you-page{padding-block:70px 90px}
+.thank-you-panel{max-width:760px;margin:0 auto;text-align:center}
+.thank-you-panel h1{margin:14px 0 18px}
+.thank-you-panel p{color:#4b555a;line-height:1.65}
+.thank-you-panel .success-mark{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#e5f5f3;color:#176b68;font-size:28px;margin:18px auto 6px}
+.thank-you-panel .actions{justify-content:center;margin-top:24px}
+.thank-you-next{margin-top:46px;padding-top:30px;border-top:1px solid #dce4e4}
+.thank-you-next h2{font-size:22px;margin:0}
+
+/* Shorter homepage: merged bands */
+.platform-hero>.hero-trust{position:relative;z-index:2;margin-top:clamp(40px,6vw,80px)}
+.platform-communities>.areas-merged{padding-top:clamp(36px,5vw,64px);padding-bottom:0}
+.video-section>.reviews-merged{padding-top:clamp(48px,6vw,90px);padding-bottom:0;background:transparent}
+
+
+/* Phones: no text smaller than 14px */
+@media(max-width:600px){
+ .eyebrow,.video-launch-eyebrow,small,.proof-stat small,.areas-group h3,p.muted,.muted,.actions .btn,.btn,.footer-col h3,.footer-legal-note,.footer-attribution,.footer-attribution *,.legal a,.legal,.mobile-conversion-cta a,.mobile-conversion-cta a span,.breadcrumb,.breadcrumb a,.small,figcaption,label,.field-hint{font-size:14px!important}
+ .eyebrow,.video-launch-eyebrow{letter-spacing:.08em}
+}
+
+/* Keep logo, call and menu on one row on small phones */
+@media(max-width:600px){
+ .nav-main{gap:10px}
+ .nav-main .nav-brand{flex:0 1 auto;min-width:0}
+ .nav-main .nav-brand img{max-width:100%;height:auto}
+ .nav-call{margin-right:4px}
+}
+@media(max-width:480px){
+ .nav-main .nav-brand{max-width:168px}
+ .nav-call{width:44px;height:44px;min-height:44px;padding:0;justify-content:center;margin-right:2px}
+ .nav-call span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+}
+@media(max-width:600px){.hero-trust .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-trust .trust-stat{min-width:0;overflow-wrap:anywhere}}
+@media(max-width:360px){.video-launch{flex-wrap:wrap}.video-launch-play{flex:none}}
+@media(max-width:400px){.mobile-conversion-cta a.btn span{display:none}.mobile-conversion-cta a.btn{gap:0}}
+@media(max-width:360px){.mobile-conversion-cta a.cta-call{width:46px;padding:0;justify-content:center}.mobile-conversion-cta a.cta-call span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}}
+@media(max-width:600px){
+ html body .footer .footer-legal-note,html body .footer .footer-attribution,html body .footer .footer-attribution *,html body .footer .legal,html body .footer .legal a,html body .footer-bottom,html body .footer-bottom a,
+ .service-phone,.service-nav a,.service-index,.member-breadcrumb,.member-breadcrumb a,.member-breadcrumb span,.field span,.explore-updated,.explore-chapter-number,.funnel-progress-copy,.funnel-progress-copy span,.funnel-privacy{font-size:14px!important}
+}
+.platform-hero:has(>.hero-trust){padding-bottom:0!important}
+.platform-hero>.hero-trust{margin-bottom:0}
