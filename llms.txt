@@ -1,6 +1,6 @@
 # Ed Prather Real Estate
 
-> Lakewood, Colorado real estate team of listing agents and buyer's agents, led by Broker/Owner Ed Prather, serving Denver, Lakewood and surrounding Front Range communities.
+> Lakewood, Colorado real estate team of listing agents and buyer's agents, led by Broker/Owner Ed Prather, serving Denver, Lakewood and surrounding Front Range communities. The team helps homeowners sell, buyers purchase, and households relocate to or within the Denver metro area.
 
 - Office: 274 Union Boulevard, Suite 450, Lakewood, CO 80228
 - Phone: (720) 650-4959
@@ -8,21 +8,99 @@
 - Google rating: 5.0 across more than 1,000 Google reviews (Google Business Profile: https://maps.google.com/maps?cid=11397791241119519406)
 - Leadership: Ed Prather, Broker/Owner, Colorado native with over 20 years in real estate
 - Approach: team-based, with a dedicated specialist for each stage of a client's move
+- Full page list: https://www.edprather.com/sitemap.xml
 
 ## Services
 - [Sell your home in Lakewood or Denver](https://www.edprather.com/sell/): pricing from comparable sales, preparation, marketing, showings, negotiation and closing
+- [Home marketing for sellers](https://www.edprather.com/sell/marketing/): how the team presents and promotes a listing
+- [Listing preparation](https://www.edprather.com/sell/listing-preparation/): what to repair, clean and organize before a home goes on the market
+- [Home valuation](https://www.edprather.com/home-valuation/): request a property-specific pricing review based on nearby sales
 - [Buy a home with a buyer's agent](https://www.edprather.com/buy/): search planning, showings, offers, negotiation and closing coordination
-- [Home valuation](https://www.edprather.com/home-valuation/)
-- [Sell and buy at the same time](https://www.edprather.com/sell-and-buy/)
-- [Relocating to Denver](https://www.edprather.com/relocating-to-denver/)
-- [First-time homebuyers](https://www.edprather.com/buy/first-time-homebuyers/)
+- [First-time homebuyers](https://www.edprather.com/buy/first-time-homebuyers/): guidance for buying a first home in the Denver area
+- [Sell and buy at the same time](https://www.edprather.com/sell-and-buy/): coordinating a home sale with the next purchase
+- [Relocating to Denver](https://www.edprather.com/relocating-to-denver/): help planning a move to the Denver metro and finding a home
 
-## About
-- [About the team](https://www.edprather.com/about/)
-- [Meet the agents](https://www.edprather.com/agents/)
-- [Meet Ed Prather](https://www.edprather.com/agents/profile/ed-prather/)
-- [Lakewood community guide](https://www.edprather.com/communities/lakewood/)
-- [All community guides](https://www.edprather.com/communities/)
+## Contact and booking
+- [Contact the team](https://www.edprather.com/contact/): phone, email, office address and a general message form
+- [Seller consultation](https://www.edprather.com/sell/consultation/): request a conversation about selling your home
+- [Buyer consultation](https://www.edprather.com/buy/consultation/): request a conversation about buying a home
+- [Schedule a home tour](https://www.edprather.com/schedule-tour/): share properties of interest and preferred showing times
+- [Home search preferences](https://www.edprather.com/new-listing-alerts/): tell the team what you are looking for in your next home
+
+## Communities
+- [All community guides](https://www.edprather.com/communities/): overview of the Denver metro and Front Range communities the team serves
+- [Denver, Colorado](https://www.edprather.com/communities/denver/): community guide to living and buying a home in Denver
+- [Lakewood, Colorado](https://www.edprather.com/communities/lakewood/): community guide to living and buying a home in Lakewood
+- [Littleton, Colorado](https://www.edprather.com/communities/littleton/): community guide to living and buying a home in Littleton
+- [Golden, Colorado](https://www.edprather.com/communities/golden/): community guide to living and buying a home in Golden
+- [Arvada, Colorado](https://www.edprather.com/communities/arvada/): community guide to living and buying a home in Arvada
+- [Wheat Ridge, Colorado](https://www.edprather.com/communities/wheat-ridge/): community guide to living and buying a home in Wheat Ridge
+- [Englewood, Colorado](https://www.edprather.com/communities/englewood/): community guide to living and buying a home in Englewood
+- [Aurora, Colorado](https://www.edprather.com/communities/aurora/): community guide to living and buying a home in Aurora
+- [Centennial, Colorado](https://www.edprather.com/communities/centennial/): community guide to living and buying a home in Centennial
+- [Highlands Ranch, Colorado](https://www.edprather.com/communities/highlands-ranch/): community guide to living and buying a home in Highlands Ranch
+- [Westminster, Colorado](https://www.edprather.com/communities/westminster/): community guide to living and buying a home in Westminster
+- [Broomfield, Colorado](https://www.edprather.com/communities/broomfield/): community guide to living and buying a home in Broomfield
+- [Parker, Colorado](https://www.edprather.com/communities/parker/): community guide to living and buying a home in Parker
+- [Castle Rock, Colorado](https://www.edprather.com/communities/castle-rock/): community guide to living and buying a home in Castle Rock
+- [Thornton, Colorado](https://www.edprather.com/communities/thornton/): community guide to living and buying a home in Thornton
+- [Northglenn, Colorado](https://www.edprather.com/communities/northglenn/): community guide to living and buying a home in Northglenn
+- [Morrison, Colorado](https://www.edprather.com/communities/morrison/): community guide to living and buying a home in Morrison
+- [Evergreen, Colorado](https://www.edprather.com/communities/evergreen/): community guide to living and buying a home in Evergreen
+
+## About the business
+- [About the team](https://www.edprather.com/about/): who Ed Prather Real Estate is and how the team works
+- [Meet the agents](https://www.edprather.com/agents/): the full team with links to each agent profile
+- [Ed Prather, Broker/Owner](https://www.edprather.com/agents/profile/ed-prather/): Ed's background and direct contact details
+- [Client stories](https://www.edprather.com/testimonials/): client experiences shared on the website
+- [Frequently asked questions](https://www.edprather.com/about/frequently-asked-questions/): answers about buying, selling, communities and planning a move
+
+## Guides for sellers
+- [Seller resources](https://www.edprather.com/seller-resources/): hub for home-selling guides and planning tools
+- [How to sell your Denver home](https://www.edprather.com/how-to-sell-your-house-in-denver-co-a-complete-home-sellers-guide/): pricing, preparation, marketing, offers, inspections, disclosures and closing
+- [Prepare your Denver home for sale](https://www.edprather.com/how-to-prepare-your-house-for-sale-in-denver-co-a-complete-sellers-guide/): repairs, cleaning, documents, photography and showings
+- [What is my Lakewood home worth?](https://www.edprather.com/how-much-is-my-house-worth-in-lakewood-co-a-complete-home-value-guide/): how comparable sales, condition and assessments shape home value
+- [Buying and selling a house in Colorado](https://www.edprather.com/how-to-buy-and-sell-a-house-at-the-same-time-in-colorado/): sell-first and buy-first plans, deadlines and possession
+- [Colorado seller closing costs](https://www.edprather.com/colorado-seller-closing-costs/): deductions and adjustments that shape seller proceeds
+- [Colorado seller property disclosure](https://www.edprather.com/colorado-seller-property-disclosure/): records checklist and disclosure preparation
+- [Colorado home sale contingencies](https://www.edprather.com/colorado-home-sale-contingency/): timelines and decision points when a purchase depends on a sale
+- [Colorado post-closing occupancy](https://www.edprather.com/colorado-post-closing-occupancy/): planning a seller rent-back after closing
+- [Selling an inherited house in Colorado](https://www.edprather.com/selling-inherited-house-colorado/): records, authority and steps toward a sale
+- [Downsizing in Denver](https://www.edprather.com/downsizing-in-denver/): space audit, priorities, budget and move sequence
+
+## Guides for buyers
+- [Buyer resources](https://www.edprather.com/buyer-resources/): hub for home-buying guides and checklists
+- [How to buy a home in Colorado](https://www.edprather.com/buy-a-home/): step-by-step from budget and pre-approval to closing
+- [Buying a Denver home: first-time buyer guide](https://www.edprather.com/buying-a-house-in-denver-co-a-complete-guide-for-first-time-home-buyers/): budgeting, neighborhoods, inspections, deadlines and closing costs
+- [Denver buyer closing costs](https://www.edprather.com/denver-buyer-closing-costs/): how a buyer estimate becomes cash to close
+- [Denver home inspection checklist](https://www.edprather.com/denver-home-inspection-checklist/): inspection planning and follow-up questions
+- [Inspection objections in Colorado](https://www.edprather.com/colorado-inspection-objection-resolution/): prioritizing findings and negotiating resolutions
+- [Appraisal gaps in Colorado](https://www.edprather.com/colorado-appraisal-gap/): financing, cash to close and negotiation when an appraisal comes in low
+- [Colorado earnest money](https://www.edprather.com/colorado-earnest-money/): deposits, deadlines and release
+- [Colorado HOA documents for buyers](https://www.edprather.com/colorado-hoa-documents-buyers/): budgets, assessments, minutes and insurance review
+- [Colorado home insurance for buyers](https://www.edprather.com/colorado-homeowners-insurance-before-buying/): coverage questions before committing to a purchase
+- [Radon and Colorado homebuying](https://www.edprather.com/colorado-radon-home-buying/): testing and follow-up during a purchase
+- [Buying a condo in Denver](https://www.edprather.com/buying-a-condo-in-denver/): association, building and document review
+- [Denver townhome vs condo](https://www.edprather.com/denver-townhome-vs-condo/): ownership, rules, maintenance and costs compared
+- [Buying new construction in Denver](https://www.edprather.com/buying-new-construction-denver/): evaluating a new-build home and its contract
+- [Buying an older home in Denver](https://www.edprather.com/buying-older-home-denver/): inspections, records and repair planning
+- [Denver final walkthrough checklist](https://www.edprather.com/denver-final-walkthrough-checklist/): checking the home against the agreement before possession
+- [Homeownership budget checklist](https://www.edprather.com/resources/ownership-checklist/): monthly costs, upfront cash, maintenance and reserves
+
+## Moving to Colorado
+- [Living in Colorado](https://www.edprather.com/living-in-colorado/): relocation guide to routines, seasons and property questions
+- [Moving to Denver relocation checklist](https://www.edprather.com/moving-to-denver-relocation-checklist/): a sequenced plan for the weeks before and after arrival
+- [Colorado home styles](https://www.edprather.com/home-styles/): guide to architectural styles, from craftsman and ranch to condominiums
+- [Denver metro market insights](https://www.edprather.com/market-insights/): dated, sourced summary of recent Denver metro housing data
+- [Blog and guides](https://www.edprather.com/blogs/): index of all buying, selling, moving and ownership articles
+
+## Planning tools
+- [Colorado home discovery tools](https://www.edprather.com/discovery/): hub for the planning tools below
+- [True cost of owning](https://www.edprather.com/discovery/calculator/): estimate the full monthly cost of a home using your own assumptions
+- [Seller net proceeds](https://www.edprather.com/discovery/net-sheet/): estimate what remains after mortgage payoff and selling expenses
+- [Compare homes](https://www.edprather.com/discovery/compare/): compare features, costs and questions for homes you enter
+- [Colorado community fit planner](https://www.edprather.com/discovery/discovery/): explore which communities fit your preferences
+- [Colorado relocation planning guide](https://www.edprather.com/discovery/relocation/): checklist for timing, destinations and scouting
 
 ## Client reviews
 - [Google](https://maps.google.com/maps?cid=11397791241119519406)
