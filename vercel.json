@@ -110,6 +110,541 @@
       "permanent": false
     },
     {
+      "source": "/assets/logo.webp",
+      "destination": "/assets/ed-prather-real-estate-logo.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/seller-video-poster.webp",
+      "destination": "/assets/ed-prather-home-selling-consultation-video.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/seller-video-poster-:rest",
+      "destination": "/assets/responsive/ed-prather-home-selling-consultation-video-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/hero.webp",
+      "destination": "/assets/denver-skyline-snow-capped-rocky-mountains-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/hero-:rest",
+      "destination": "/assets/responsive/denver-skyline-snow-capped-rocky-mountains-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/cityscape_200kb.webp",
+      "destination": "/assets/denver-skyline-autumn-foliage-rocky-mountains-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/cityscape-200kb-:rest",
+      "destination": "/assets/responsive/denver-skyline-autumn-foliage-rocky-mountains-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/Rectangle-12-1024x687.png",
+      "destination": "/assets/downtown-denver-colorado-skyline-twilight.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/Rectangle-12-1024x687-:rest",
+      "destination": "/assets/downtown-denver-colorado-skyline-twilight.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/rectangle_12-1024x687.webp",
+      "destination": "/assets/lakewood-colorado-neighborhoods-foothills-aerial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/rectangle-12-1024x687-:rest",
+      "destination": "/assets/responsive/lakewood-colorado-neighborhoods-foothills-aerial-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/littleton-bega.webp",
+      "destination": "/assets/bega-park-downtown-littleton-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/littleton-bega-:rest",
+      "destination": "/assets/responsive/bega-park-downtown-littleton-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/rectangle_12-1-1024x687.webp",
+      "destination": "/assets/downtown-golden-colorado-welcome-arch-washington-avenue.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/rectangle-12-1-1024x687-:rest",
+      "destination": "/assets/responsive/downtown-golden-colorado-welcome-arch-washington-avenue-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/rectangle_12-2-1024x687.webp",
+      "destination": "/assets/olde-town-arvada-colorado-downtown-aerial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/rectangle-12-2-1024x687-:rest",
+      "destination": "/assets/responsive/olde-town-arvada-colorado-downtown-aerial-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/rectangle_12-4-1024x687.webp",
+      "destination": "/assets/centennial-colorado-autumn-neighborhoods-overlook.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/rectangle-12-4-1024x687-:rest",
+      "destination": "/assets/responsive/centennial-colorado-autumn-neighborhoods-overlook-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-wheat-ridge.webp",
+      "destination": "/assets/west-lake-prospect-park-wheat-ridge-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-wheat-ridge-:rest",
+      "destination": "/assets/responsive/west-lake-prospect-park-wheat-ridge-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-englewood.webp",
+      "destination": "/assets/south-broadway-downtown-englewood-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-englewood-:rest",
+      "destination": "/assets/responsive/south-broadway-downtown-englewood-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-aurora.webp",
+      "destination": "/assets/aurora-reservoir-shoreline-aurora-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-aurora-:rest",
+      "destination": "/assets/responsive/aurora-reservoir-shoreline-aurora-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-highlands-ranch.webp",
+      "destination": "/assets/highlands-ranch-colorado-neighborhoods-aerial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-highlands-ranch-:rest",
+      "destination": "/assets/responsive/highlands-ranch-colorado-neighborhoods-aerial-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-westminster.webp",
+      "destination": "/assets/westminster-colorado-open-space-rocky-mountains.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-westminster-:rest",
+      "destination": "/assets/responsive/westminster-colorado-open-space-rocky-mountains-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-broomfield.webp",
+      "destination": "/assets/broomfield-colorado-flatirons-mountain-view.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-broomfield-:rest",
+      "destination": "/assets/responsive/broomfield-colorado-flatirons-mountain-view-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-parker.webp",
+      "destination": "/assets/downtown-parker-colorado-mainstreet.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-parker-:rest",
+      "destination": "/assets/responsive/downtown-parker-colorado-mainstreet-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-castle-rock.webp",
+      "destination": "/assets/downtown-castle-rock-colorado-butte-overlook.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-castle-rock-:rest",
+      "destination": "/assets/responsive/downtown-castle-rock-colorado-butte-overlook-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-thornton.webp",
+      "destination": "/assets/thornton-colorado-stone-welcome-monument.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-thornton-:rest",
+      "destination": "/assets/responsive/thornton-colorado-stone-welcome-monument-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-northglenn.webp",
+      "destination": "/assets/northglenn-colorado-community-monument-sign.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-northglenn-:rest",
+      "destination": "/assets/responsive/northglenn-colorado-community-monument-sign-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-morrison.webp",
+      "destination": "/assets/historic-downtown-morrison-colorado-foothills.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-morrison-:rest",
+      "destination": "/assets/responsive/historic-downtown-morrison-colorado-foothills-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/community-evergreen.webp",
+      "destination": "/assets/downtown-evergreen-colorado-main-street.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/community-evergreen-:rest",
+      "destination": "/assets/responsive/downtown-evergreen-colorado-main-street-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/05-prepare-house-for-sale-denver-1.webp",
+      "destination": "/assets/staged-living-room-mountain-views-colorado-home-sale.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/05-prepare-house-for-sale-denver-1-:rest",
+      "destination": "/assets/responsive/staged-living-room-mountain-views-colorado-home-sale-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/Rectangle-22.webp",
+      "destination": "/assets/bright-modern-living-room-home-interior.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/Rectangle-22-:rest",
+      "destination": "/assets/responsive/bright-modern-living-room-home-interior-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/04-buy-and-sell-house-colorado.webp",
+      "destination": "/assets/house-keys-moving-boxes-buy-and-sell-home.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/04-buy-and-sell-house-colorado-:rest",
+      "destination": "/assets/responsive/house-keys-moving-boxes-buy-and-sell-home-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-01-how-to-sell-house-denver-1.webp",
+      "destination": "/assets/sold-real-estate-sign-two-story-home-sale.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/migration-01-how-to-sell-house-denver-1-:rest",
+      "destination": "/assets/responsive/sold-real-estate-sign-two-story-home-sale-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-03-buying-house-denver-1.webp",
+      "destination": "/assets/two-story-craftsman-home-exterior-sunset.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/migration-03-buying-house-denver-1-:rest",
+      "destination": "/assets/responsive/two-story-craftsman-home-exterior-sunset-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/group_10-1024x950.webp",
+      "destination": "/assets/ed-prather-real-estate-team-lakewood-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/group-10-1024x950-:rest",
+      "destination": "/assets/responsive/ed-prather-real-estate-team-lakewood-colorado-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/group_9.webp",
+      "destination": "/assets/ed-prather-founder-portrait-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/group-9-:rest",
+      "destination": "/assets/responsive/ed-prather-founder-portrait-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-ed-prather.webp",
+      "destination": "/assets/ed-prather-broker-owner-lakewood-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-ed-prather-:rest",
+      "destination": "/assets/responsive/ed-prather-broker-owner-lakewood-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-erin-neptune.webp",
+      "destination": "/assets/erin-neptune-director-of-sales-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-erin-neptune-:rest",
+      "destination": "/assets/responsive/erin-neptune-director-of-sales-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-bri-ugalde.webp",
+      "destination": "/assets/bri-ugalde-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-bri-ugalde-:rest",
+      "destination": "/assets/responsive/bri-ugalde-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-tobias-trujillo.webp",
+      "destination": "/assets/tobias-trujillo-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-tobias-trujillo-:rest",
+      "destination": "/assets/responsive/tobias-trujillo-real-estate-agent-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_28-10-5.webp",
+      "destination": "/assets/regina-ortega-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/migration-rectangle-28-10-5-:rest",
+      "destination": "/assets/responsive/regina-ortega-real-estate-agent-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-blayze-petersen-20261118.webp",
+      "destination": "/assets/blayze-petersen-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-blayze-petersen-20261118-:rest",
+      "destination": "/assets/responsive/blayze-petersen-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-fabi-gerwe.webp",
+      "destination": "/assets/fabi-gerwe-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-fabi-gerwe-:rest",
+      "destination": "/assets/responsive/fabi-gerwe-real-estate-agent-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-ryan-diller.webp",
+      "destination": "/assets/ryan-diller-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-ryan-diller-:rest",
+      "destination": "/assets/responsive/ryan-diller-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-shantih-fouts.webp",
+      "destination": "/assets/shantih-fouts-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-shantih-fouts-:rest",
+      "destination": "/assets/responsive/shantih-fouts-real-estate-agent-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-kevin-crook.webp",
+      "destination": "/assets/kevin-crook-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-kevin-crook-:rest",
+      "destination": "/assets/responsive/kevin-crook-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-andy-gonzalez.webp",
+      "destination": "/assets/andy-gonzalez-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-andy-gonzalez-:rest",
+      "destination": "/assets/responsive/andy-gonzalez-real-estate-agent-denver-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-brittany-hansen.webp",
+      "destination": "/assets/brittany-hansen-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-brittany-hansen-:rest",
+      "destination": "/assets/responsive/brittany-hansen-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-maxwell-murphy-20261102.webp",
+      "destination": "/assets/maxwell-murphy-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/responsive/team-maxwell-murphy-20261102-:rest",
+      "destination": "/assets/responsive/maxwell-murphy-real-estate-agent-lakewood-co-:rest",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-04-buy-and-sell-house-colorado.webp",
+      "destination": "/assets/house-keys-moving-boxes-buy-and-sell-home.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-05-prepare-house-for-sale-denver-1.webp",
+      "destination": "/assets/staged-living-room-mountain-views-colorado-home-sale.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-Rectangle-12-1024x687.png",
+      "destination": "/assets/downtown-denver-colorado-skyline-twilight.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-Rectangle-22.webp",
+      "destination": "/assets/bright-modern-living-room-home-interior.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-cityscape_200kb.webp",
+      "destination": "/assets/denver-skyline-autumn-foliage-rocky-mountains-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-group_10-1024x950.webp",
+      "destination": "/assets/ed-prather-real-estate-team-lakewood-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-group_9.webp",
+      "destination": "/assets/ed-prather-founder-portrait-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_3-1-1024x950.webp",
+      "destination": "/assets/ed-prather-real-estate-team-lakewood-colorado.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_12-1-1024x687.webp",
+      "destination": "/assets/downtown-golden-colorado-welcome-arch-washington-avenue.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_12-1024x687.webp",
+      "destination": "/assets/lakewood-colorado-neighborhoods-foothills-aerial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_12-2-1024x687.webp",
+      "destination": "/assets/olde-town-arvada-colorado-downtown-aerial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/migration-rectangle_12-4-1024x687.webp",
+      "destination": "/assets/centennial-colorado-autumn-neighborhoods-overlook.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-ed-prather.webp",
+      "destination": "/assets/ed-prather-broker-owner-lakewood-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-erin-neptune.webp",
+      "destination": "/assets/erin-neptune-director-of-sales-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-bri-ugalde.webp",
+      "destination": "/assets/bri-ugalde-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-tobias-trujillo.webp",
+      "destination": "/assets/tobias-trujillo-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-regina-ortega.webp",
+      "destination": "/assets/regina-ortega-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-blayze-petersen.webp",
+      "destination": "/assets/blayze-petersen-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-fabi-gerwe.webp",
+      "destination": "/assets/fabi-gerwe-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-ryan-diller.webp",
+      "destination": "/assets/ryan-diller-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-shantih-fouts.webp",
+      "destination": "/assets/shantih-fouts-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-kevin-crook.webp",
+      "destination": "/assets/kevin-crook-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/agent-andy-gonzalez.webp",
+      "destination": "/assets/andy-gonzalez-real-estate-agent-denver-co.webp",
+      "permanent": true
+    },
+    {
+      "source": "/assets/team-maxwell-murphy.webp",
+      "destination": "/assets/maxwell-murphy-real-estate-agent-lakewood-co.webp",
+      "permanent": true
+    },
+    {
       "source": "/discovery/tour",
       "destination": "/schedule-tour/",
       "permanent": true
