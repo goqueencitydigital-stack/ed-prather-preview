@@ -1,1452 +1,772 @@
 /* ==========================================================================
-   Viewport-Ergonomic Layout & Full-Screen Hero (Nov 23, 2026)
-   - Full-screen homepage hero on desktop/laptops (100% of screen below header)
-   - Every standalone section across homepage & inner routes fits cleanly inside
-     a single desktop viewport without clipping, overlapping, or image distortion
-   - Preserves 100% of crawlable SEO copy, headings, internal links, and FAQs
+   Ed Prather Real Estate — Full-Screen Hero & Proportional Section Layout
+   2026-11-23 (Full-Scale Luxury Typography & Uncropped Card Media)
    ========================================================================== */
 
-/* 1. Sticky-header scroll offsets across the entire site */
-main > section,
-main > .depth-standalone,
-.depth-block,
-.service-section,
-.positioning-services,
-.positioning-service,
-.explore-chapter,
-.explore-faq,
-.article-content h2,
-.article-content section,
-.tool-faq {
-  scroll-margin-top: 112px;
+/* 1. Subtle crisp header bottom divider over bright hero sky */
+.site-header {
+  border-bottom: 1px solid rgba(32, 36, 39, 0.07);
 }
 
-/* Remove accidental double horizontal gutters when .wrap nests inside .wrap */
-.wrap .wrap {
-  padding-inline: 0;
-}
-
-/* ==========================================================================
-   2. Desktop & Laptop Viewport Sizing (min-width: 901px)
-   ========================================================================== */
-@media (min-width: 901px) {
-  /* Full-screen homepage hero: fills 100% of initial viewport below 100px header */
+/* 2. Full-screen Homepage Hero (100% viewport below sticky 100px header) */
+@media (min-width: 1024px) {
   .home .platform-hero {
-    min-height: calc(100svh - 100px);
-    height: calc(100svh - 100px);
+    min-height: calc(100svh - 101px);
+    height: calc(100svh - 101px);
     max-height: 980px;
-    padding: clamp(28px, 4.5vh, 56px) 0 clamp(36px, 6vh, 76px);
+    padding: clamp(24px, 3.2vh, 42px) 0 clamp(36px, 5vh, 64px);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .home .platform-hero > .wrap {
-    width: 100%;
+    align-items: flex-start;
   }
 
   .home .platform-hero-image {
+    object-position: center 35%;
     filter: none;
-    object-fit: cover;
-    object-position: center 46%;
   }
 
-  .home .platform-hero:after {
+  /* IMPORTANT: z-index: -1 keeps gradient behind .platform-hero-copy so text stays #202427 crisp */
+  .home .platform-hero::after {
+    z-index: -1;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.94) 0%,
-      rgba(255, 255, 255, 0.82) 19%,
-      rgba(255, 255, 255, 0.45) 38%,
-      rgba(255, 255, 255, 0.08) 54%,
-      rgba(32, 36, 39, 0.12) 100%
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 22%,
+      rgba(255, 255, 255, 0.54) 44%,
+      rgba(255, 255, 255, 0.12) 60%,
+      rgba(255, 255, 255, 0) 74%
     );
   }
 
   .home .platform-hero-copy {
-    margin-bottom: clamp(14px, 2vh, 24px);
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .home .platform-hero-copy .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: #202427;
     margin-bottom: 12px;
   }
 
+  .home .platform-hero-copy h1,
   .home .platform-hero-copy h1.conversion-headline {
-    font-size: clamp(42px, 4.4vw, 68px);
-    line-height: 1.06;
+    font-size: clamp(50px, 4.4vw, 66px);
+    line-height: 1.03;
+    margin: 0 auto;
+    max-width: 17ch;
     min-height: 0;
-    margin-bottom: 14px;
+    color: #202427;
+    text-shadow: 0 1px 16px rgba(255, 255, 255, 0.65);
   }
 
   .home .platform-hero-copy p.conversion-support {
-    font-size: clamp(17px, 1.35vw, 20px);
-    line-height: 1.48;
+    max-width: 60ch;
     min-height: 0;
+    margin: 14px auto 0;
+    font-size: clamp(18px, 1.3vw, 20px);
+    line-height: 1.45;
+    color: #202427;
+    font-weight: 600;
+    text-shadow: 0 1px 14px rgba(255, 255, 255, 0.85);
   }
 
-  .home .conversion-main-actions {
-    margin-top: clamp(16px, 2.2vh, 24px);
-  }
-
-  /* Global section vertical rhythm: breathable yet fits one screen */
-  .section {
-    padding-block: clamp(34px, 4.2vh, 52px);
-  }
-
-  .section-head {
-    margin-bottom: clamp(16px, 2.2vh, 24px);
-  }
-
-  .section-head h2,
-  .intro-copy h2,
-  .seller-copy h2,
-  .video-layout h2,
-  .testimonial h2 {
-    font-size: clamp(32px, 3vw, 46px);
-    line-height: 1.1;
-  }
-
-  .section-head p {
-    margin-top: 8px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  /* Standalone dark trust band ("Big experience. Personal attention.") */
-  .trust-section {
-    margin: 0;
-    padding: clamp(38px, 4.8vh, 56px) 0;
-  }
-
-  /* Standalone & inner polished depth blocks + "Why Work With Ed Prather Real Estate?" */
-  .depth-standalone {
-    margin-block: clamp(22px, 2.8vh, 34px);
-  }
-
-  .depth-standalone .depth-polished,
-  .wrap > .depth-polished {
-    max-width: none;
-    margin: 0;
-    border-top: 0;
-    border-radius: 22px;
-    padding: clamp(24px, 2.8vh, 36px) clamp(28px, 3vw, 44px);
-    background: #f4f6f7;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .wrap > .depth-polished {
-    margin-block: clamp(24px, 3vh, 36px);
-  }
-
-  .depth-polished .depth-top {
-    gap: clamp(24px, 3.5vw, 52px);
-  }
-
-  .depth-polished .depth-head h2 {
-    margin: 8px 0 0;
-    font-size: clamp(25px, 2.2vw, 34px);
-    line-height: 1.14;
-  }
-
-  .depth-polished .depth-intro p {
-    font-size: 15.5px;
-    line-height: 1.54;
-    margin-bottom: 10px;
-  }
-
-  .depth-polished .depth-chapters {
-    gap: 14px;
+  .home .platform-hero-copy .conversion-actions {
     margin-top: 20px;
+    justify-content: center;
+    gap: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .home .platform-hero {
+    min-height: calc(100svh - 86px);
+    padding: 36px 0 56px;
+  }
+}
+
+/* 3. Spacious natural section breathing room + Full-Scale Single-Screen Sections */
+@media (min-width: 1024px) {
+  .section {
+    padding-block: clamp(46px, 5vh, 62px);
   }
 
-  .depth-count-4 .depth-chapters {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  /* Trust & Authority Proof Card ("Why Work With Ed Prather Real Estate?")
+     Matches exact home-polish.css specificity; keeps 100% full-size fonts */
+  .depth-standalone {
+    padding-block: 16px;
   }
 
-  .depth-count-3 .depth-chapters,
-  .depth-count-6 .depth-chapters {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  .positioning-proof.depth-polished,
+  .depth-standalone .depth-polished.positioning-proof {
+    padding: 24px 36px;
   }
 
-  .depth-polished .depth-chapter {
-    padding: 16px 18px 18px;
-    border-radius: 14px;
+  .positioning-proof.depth-polished h2 {
+    font-size: clamp(30px, 2.5vw, 36px);
+    line-height: 1.1;
+    margin: 6px 0 0;
   }
 
-  .depth-polished .depth-num {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-
-  .depth-polished .depth-chapter h3 {
-    font-size: 17.5px;
-    line-height: 1.25;
-    margin: 0 0 6px;
-  }
-
-  .depth-polished .depth-chapter p {
-    font-size: 14px;
-    line-height: 1.48;
-  }
-
-  .depth-polished .depth-links {
-    margin-top: 16px;
-    padding-top: 0;
-    gap: 8px 10px;
-  }
-
-  .depth-polished .depth-links a {
-    padding: 7px 14px;
-    font-size: 13.5px;
-  }
-
-  /* Proof block ("Why Work With Ed Prather Real Estate?") — fits 100% on 1 screen */
-  .depth-standalone .depth-polished.positioning-proof,
-  .wrap > .depth-polished.positioning-proof {
-    background: #202427;
-    color: #e9ecef;
-    padding: clamp(22px, 2.6vh, 32px) clamp(28px, 3vw, 42px);
-  }
-
-  .wrap > .depth-polished.positioning-proof:before {
-    display: none;
+  .positioning-proof.depth-polished .depth-intro,
+  .positioning-proof.depth-polished .depth-intro p {
+    font-size: 16px;
+    line-height: 1.46;
+    margin-top: 6px;
+    margin-bottom: 0;
   }
 
   .positioning-proof.depth-polished .depth-chapters {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 0;
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .positioning-proof.depth-polished .depth-chapter {
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    padding: 16px 18px;
+    padding: 16px 20px 18px;
   }
 
   .positioning-proof.depth-polished .depth-chapter:first-child {
     padding-left: 0;
   }
 
-  .positioning-proof.depth-polished .depth-chapter + .depth-chapter {
-    border-left: 1px solid #3a4045;
-  }
-
-  .positioning-proof.depth-polished .proof-stat {
-    gap: 3px;
-    margin-bottom: 8px;
-  }
-
-  .positioning-proof.depth-polished .proof-stat strong {
-    font-size: clamp(24px, 2.1vw, 32px);
-  }
-
-  .positioning-proof.depth-polished .proof-stat small {
-    font-size: 11px;
-  }
-
   .positioning-proof.depth-polished .depth-chapter h3 {
-    font-size: 16.5px;
-    margin-bottom: 5px;
+    font-size: 18px;
+    line-height: 1.25;
+    margin-bottom: 6px;
   }
 
   .positioning-proof.depth-polished .depth-chapter p {
-    font-size: 13.5px;
-    line-height: 1.45;
+    font-size: 15px;
+    line-height: 1.44;
+    margin: 0;
   }
 
   .positioning-proof.depth-polished .positioning-quotes {
     margin-top: 16px;
-    gap: 14px;
+    gap: 18px;
   }
 
   .positioning-proof.depth-polished .positioning-quotes figure {
-    padding: 14px 20px;
-    border-radius: 12px;
-  }
-
-  .positioning-proof.depth-polished .positioning-quotes figure:before {
-    font-size: 54px;
-    top: 6px;
-    right: 16px;
+    padding: 16px 22px;
   }
 
   .positioning-proof.depth-polished .positioning-quotes blockquote p {
-    font-size: 15px;
+    font-size: 16.5px;
     line-height: 1.44;
-    margin: 0 0 6px;
-  }
-
-  .positioning-proof.depth-polished .positioning-quotes figcaption {
-    font-size: 12.5px;
-    margin-top: 4px;
+    margin: 0 0 8px;
   }
 
   .positioning-proof.depth-polished .positioning-actions {
     margin-top: 16px;
-    gap: 12px;
   }
 
-  .positioning-proof.depth-polished .positioning-actions .btn {
-    min-height: 44px;
-    padding: 10px 18px;
-    font-size: 14.5px;
+  /* Other Depth-Polished Chapter Cards (Homepage & Inner Pages) — Full-Scale Typography */
+  .depth-polished:not(.positioning-proof) {
+    padding: 24px 36px;
   }
 
-  /* Unpolished .depth-block across inner articles, tools, directories & guides */
-  .depth-block:not(.depth-polished) {
-    margin: clamp(24px, 3vh, 36px) 0;
-    padding: clamp(20px, 2.5vh, 28px) 0;
-    max-width: none;
+  .depth-polished:not(.positioning-proof) h2 {
+    font-size: clamp(28px, 2.4vw, 35px);
+    line-height: 1.12;
+    margin: 6px 0 0;
   }
 
-  .depth-block:not(.depth-polished) h2 {
-    font-size: clamp(23px, 2.1vw, 30px);
-    margin: 8px 0 12px;
-  }
-
-  .depth-block:not(.depth-polished) p {
-    font-size: 15px;
-    line-height: 1.52;
-    margin-bottom: 10px;
-  }
-
-  .depth-block:not(.depth-polished) .depth-chapters {
-    gap: 14px 22px;
-    margin: 14px 0;
-  }
-
-  .wrap > .depth-block:not(.depth-polished) .depth-chapters:has(> .depth-chapter:nth-child(4):last-child) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .wrap > .depth-block:not(.depth-polished) .depth-chapters:has(> .depth-chapter:nth-child(3):last-child) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .depth-block:not(.depth-polished) .depth-chapter h3 {
-    font-size: 17.5px;
-    margin-bottom: 5px;
-  }
-
-  .depth-block:not(.depth-polished) .depth-chapter p {
-    font-size: 14px;
-    line-height: 1.46;
-    margin-bottom: 0;
-  }
-
-  .depth-block:not(.depth-polished) .depth-links {
-    padding-top: 12px;
-    margin-top: 14px;
-    gap: 8px 18px;
-  }
-
-  .depth-block:not(.depth-polished) .depth-links a {
-    font-size: 14px;
-  }
-
-  .positioning-block .positioning-table,
-  .positioning-block .positioning-example {
-    margin: 14px 0;
-  }
-
-  .positioning-block th,
-  .positioning-block td {
-    padding: 7px 10px;
-    font-size: 14px;
-  }
-
-  /* Homepage Featured Communities (6 cards) — fits 100% on 1 screen */
-  .platform-communities .section-head {
-    margin-bottom: 12px;
-  }
-
-  .community-toolbar {
-    padding-bottom: 10px;
-    margin-bottom: 14px;
-  }
-
-  .place-filter {
-    min-height: 36px;
-    padding: 6px 14px;
-    font-size: 14px;
-  }
-
-  .platform-place-grid {
-    gap: 14px 18px;
-  }
-
-  .place-photo img {
-    height: 156px;
-    object-fit: cover;
-  }
-
-  .place-card-body {
-    padding: 10px 14px 12px;
-  }
-
-  .place-card h3 {
-    font-size: 20px;
-    margin-bottom: 3px;
-  }
-
-  .place-card p {
-    font-size: 13.5px;
-    line-height: 1.38;
-    min-height: 0;
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .place-card-links {
-    padding-top: 8px;
-    margin-top: 8px;
-    font-size: 13px;
-  }
-
-  .place-footnote {
-    margin-top: 10px;
-    font-size: 12.5px;
-  }
-
-  /* Areas We Serve (18 Front Range links) — fits 100% on 1 screen */
-  .areas-group {
-    padding: 16px 20px 12px;
-  }
-
-  .areas-group a {
-    padding: 7px 0;
-    font-size: 15px;
-  }
-
-  /* Video & Client Stories sections */
-  .video-section,
-  .client-section {
-    padding-block: clamp(34px, 4.2vh, 50px);
-  }
-
-  .testimonial blockquote {
-    font-size: clamp(21px, 2vw, 26px);
-    line-height: 1.45;
-  }
-
-  /* Homepage Team section (4 featured agents) — proportional top-aligned portraits */
-  .home-team-grid {
-    gap: 20px;
-  }
-
-  .home-team-grid .agent-card img {
-    aspect-ratio: 4 / 4.1;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  .home-team-grid .agent-card h3 {
-    font-size: 20px;
-    margin-top: 10px;
-  }
-
-  .home-team-grid .agent-card p {
-    font-size: 14px;
-  }
-
-  /* Homepage Journal / Insights section (6 guides) — fits 100% on 1 screen */
-  .journal-section {
-    padding-block: clamp(28px, 3.4vh, 40px);
-  }
-
-  .journal-section .section-head {
-    margin-bottom: 14px;
-  }
-
-  .journal-section .blog-grid {
-    gap: 12px 18px;
-  }
-
-  .journal-section .blog-card img {
-    height: 92px;
-    border-radius: 8px;
-    margin-bottom: 6px;
-    object-fit: cover;
-  }
-
-  .journal-section .blog-card .eyebrow {
-    font-size: 11px;
-  }
-
-  .journal-section .blog-card h3 {
-    font-size: 17px;
-    line-height: 1.24;
-    margin-block: 4px;
-  }
-
-  .journal-section .blog-card p {
-    font-size: 13px;
-    line-height: 1.38;
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .journal-section .blog-card .text-link {
-    margin-top: 5px;
-    font-size: 13px;
-    display: inline-block;
-  }
-
-  /* Homepage FAQ (8 questions in crisp 2-column grid) — fits 100% on 1 screen */
-  .home-faq-layout {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .home-faq-layout > div:first-child {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 6px 24px;
-  }
-
-  .home-faq-layout > div:first-child .eyebrow {
-    flex-basis: 100%;
-    margin-bottom: 0;
-  }
-
-  .home-faq-layout h2 {
-    margin: 0;
-  }
-
-  .home-faq-layout .muted {
-    margin: 0;
-    max-width: 44ch;
-    font-size: 15px;
-  }
-
-  .home-faq-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 36px;
-    align-items: start;
-    border-top: 0;
-  }
-
-  .home-faq-list details:nth-child(-n + 2) {
-    border-top: 1px solid #d9dde0;
-  }
-
-  .home-faq-list summary {
-    padding: 14px 0;
+  .depth-polished:not(.positioning-proof) .depth-intro,
+  .depth-polished:not(.positioning-proof) .depth-intro p {
     font-size: 16px;
-    line-height: 1.35;
+    line-height: 1.46;
+    margin-top: 6px;
+    margin-bottom: 0;
   }
 
-  .home-faq-list summary span {
-    width: 28px;
-    height: 28px;
-  }
-
-  .home-faq-list details p {
-    font-size: 14.5px;
-    line-height: 1.5;
-    margin: 0 0 14px;
-    padding-right: 32px;
-  }
-
-  /* Final CTA & Footer — compact so each fits cleanly inside 1 screen */
-  .final-cta {
-    padding: clamp(36px, 4.5vh, 52px) 24px;
-  }
-
-  .final-cta h2 {
-    font-size: clamp(34px, 3.2vw, 46px);
-  }
-
-  .final-cta p {
-    margin-top: 10px;
-    font-size: 17px;
-  }
-
-  .final-cta .actions {
-    margin-top: 18px;
-  }
-
-  .footer.footer-v2 {
-    padding-top: 38px;
-  }
-
-  .footer-v2-top {
-    padding-bottom: 24px;
-    gap: 36px;
-  }
-
-  .footer-v2-grid {
-    padding-block: 24px;
-    gap: 28px;
-  }
-
-  .footer-v2 .footer-col h3 {
-    margin-bottom: 12px;
-  }
-
-  .footer-v2 .footer-col li + li {
-    margin-top: 7px;
-  }
-
-  .footer-v2 .footer-legal-note {
-    padding: 12px 0;
-  }
-
-  .footer-v2 .footer-bottom {
-    padding: 12px 0 18px;
-  }
-
-  /* ==========================================================================
-     3. Inner Pages: Heroes, Service Sections, Directories, Tools & Forms
-     ========================================================================== */
-  .interior-refresh .breadcrumb {
-    padding-top: 16px;
-  }
-
-  .interior-refresh .page-intro {
-    margin-bottom: 28px;
-    padding-bottom: 24px;
-  }
-
-  .interior-refresh .page-intro.has-image {
-    padding-top: 18px;
-    gap: clamp(28px, 4vw, 56px);
-    align-items: center;
-  }
-
-  .interior-refresh .page-hero {
-    padding: 10px 0;
-  }
-
-  .interior-refresh .page-hero h1,
-  .interior-refresh .page-intro.has-image h1 {
-    font-size: clamp(32px, 3.1vw, 48px);
-    margin-bottom: 14px;
-  }
-
-  .interior-refresh .page-hero .intro,
-  .interior-refresh .page-intro.has-image .intro {
-    font-size: 17px;
-    line-height: 1.58;
-  }
-
-  .interior-refresh .page-image img {
-    height: clamp(250px, 34vh, 340px);
-    object-fit: cover;
-  }
-
-  /* Service pages (/buy/, /sell/) */
-  .service-hero {
-    padding: 18px 0 28px;
-    gap: clamp(28px, 4vw, 56px);
-  }
-
-  .service-hero h1 {
-    font-size: clamp(36px, 3.6vw, 54px);
-    margin: 12px 0 16px;
-  }
-
-  .service-hero p {
-    font-size: 17.5px;
-    line-height: 1.58;
-    margin-bottom: 18px;
-  }
-
-  .service-hero figure img {
-    height: clamp(300px, 42vh, 410px);
-    object-fit: cover;
-  }
-
-  .service-nav {
-    padding: 12px 0;
-  }
-
-  .service-section {
-    padding: clamp(30px, 3.8vh, 46px) 0;
-  }
-
-  .service-heading {
-    margin-bottom: 22px;
-  }
-
-  .service-section h2,
-  .service-close h2 {
-    font-size: clamp(28px, 2.8vw, 40px);
-    margin: 10px 0 14px;
-  }
-
-  .service-heading > p,
-  .process-intro > p,
-  .service-film p {
-    font-size: 16.5px;
-    line-height: 1.58;
-  }
-
-  .service-values {
-    gap: 26px;
-  }
-
-  .service-values > div {
-    padding-top: 16px;
-  }
-
-  .service-values h3,
-  .service-resources h3 {
-    font-size: 21px;
-    margin: 12px 0 8px;
-  }
-
-  .service-values p,
-  .service-resources p {
-    font-size: 15px;
-    line-height: 1.56;
-  }
-
-  /* 3-column grid + full-width feature row for .positioning-services on /buy/ and /sell/ */
-  .positioning-services {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px 16px;
-    padding: 18px 0;
-  }
-
-  .positioning-service {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 10px;
-    padding: 14px 16px;
-    background: #f7fafa;
-    border: 1px solid #dbe3e2;
-    border-radius: 12px;
-  }
-
-  .positioning-service:nth-child(7) {
-    grid-column: 1 / -1;
-  }
-
-  .positioning-service:nth-child(7) > div:last-child {
-    display: grid;
-    grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
-    gap: 6px 20px;
-    align-items: start;
-  }
-
-  .positioning-service:nth-child(7) h2 {
-    grid-column: 1;
-    margin: 0;
-  }
-
-  .positioning-service:nth-child(7) p,
-  .positioning-service:nth-child(7) ul {
-    grid-column: 2;
-  }
-
-  .positioning-service .service-index {
-    padding-top: 3px;
-  }
-
-  .positioning-service h2 {
-    font-size: clamp(17.5px, 1.45vw, 20.5px);
-    line-height: 1.2;
-    margin: 0 0 6px;
-  }
-
-  .positioning-service p {
-    font-size: 13.5px;
-    line-height: 1.44;
-    margin: 0 0 6px;
-  }
-
-  .positioning-service ul {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    margin-top: 4px;
-  }
-
-  .positioning-service li {
-    font-size: 13px;
-    line-height: 1.38;
-  }
-
-  /* Service Process & Service FAQ */
-  .process-steps summary {
-    padding: 15px 0;
-  }
-
-  .process-steps summary h3 {
-    font-size: 20px;
-  }
-
-  .process-steps details > div {
-    padding: 0 16px 14px 48px;
-  }
-
-  .process-steps p {
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  .service-resources > a {
-    padding: 20px 22px 50px;
-  }
-
-  .service-faq {
-    grid-template-columns: 1fr;
+  .depth-polished:not(.positioning-proof) .depth-chapters {
+    margin-top: 16px;
     gap: 16px;
   }
 
-  .service-faq > div:first-child {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 6px 24px;
-  }
-
-  .service-faq > div:first-child .eyebrow {
-    flex-basis: 100%;
-    margin-bottom: 0;
-  }
-
-  .service-faq > div:last-child {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 32px;
-    align-items: start;
-  }
-
-  .service-faq summary {
-    padding: 13px 0;
-    font-size: 15.5px;
-    line-height: 1.38;
-  }
-
-  .service-faq details p {
-    font-size: 14px;
-    line-height: 1.5;
-    padding-bottom: 12px;
-  }
-
-  .service-close {
-    padding: 38px 36px;
-    margin-bottom: 36px;
-  }
-
-  /* Meet the Team directory (/agents/ — all 13 portraits on 1 screen) */
-  .team-page .directory-controls {
-    margin-bottom: 14px;
-  }
-
-  .team-page .agent-grid {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 14px 16px;
-  }
-
-  .team-page .agent-card img {
-    aspect-ratio: 4 / 4.25;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  .team-page .agent-card h3 {
-    font-size: 16px;
-    line-height: 1.22;
-    margin-top: 7px;
-  }
-
-  .team-page .agent-card p {
-    font-size: 13px;
-    margin-top: 2px;
-  }
-
-  /* Individual Agent Profile Hero (/agents/profile/*) */
-  .profile-page .member-hero {
-    padding-block: 28px 34px;
-  }
-
-  .profile-page .member-portrait img {
-    max-height: 410px;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  /* Communities Directory (/communities/ — all 18 communities on 1 screen) */
-  .directory-controls {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 240px;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .directory-controls .sr-only {
-    position: absolute;
-  }
-
-  .directory-controls input,
-  .directory-controls select {
-    min-height: 42px;
-    padding: 8px 14px;
-    margin: 0;
-  }
-
-  .communities-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 10px 12px;
-    margin-top: 8px !important;
-  }
-
-  .community-card .photo {
-    aspect-ratio: 16 / 9.5;
-    border-radius: 8px;
-  }
-
-  .community-card .photo > span {
-    display: none;
-  }
-
-  .community-card h3 {
-    font-size: 15.5px;
-    line-height: 1.2;
-    margin-top: 6px;
-  }
-
-  .community-card p {
-    font-size: 12px;
-    line-height: 1.32;
-    margin-top: 2px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Planning Tools & Home Styles Hubs (/discovery/, /home-styles/, /seller-resources/) */
-  .interior-refresh .tool-catalog {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .interior-refresh .tool-catalog:has(> .tool-card:nth-child(6):last-child) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .interior-refresh .tool-card {
-    min-height: 0;
-    padding: 16px 18px;
-    border: 1px solid #dbe3e2;
-    border-radius: 12px;
-    background: #fff;
-  }
-
-  .interior-refresh .tool-card .eyebrow {
-    font-size: 10px;
-    margin-bottom: 6px;
-  }
-
-  .interior-refresh .tool-card h3 {
-    font-size: 18px;
-    line-height: 1.22;
-    margin: 0;
-  }
-
-  .interior-refresh .tool-card p {
-    font-size: 13.5px;
-    line-height: 1.42;
-    margin-top: 6px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .interior-refresh .tool-card .text-link {
-    margin-top: 10px;
-    font-size: 13.5px;
-  }
-
-  /* Interactive Planning Tools (/discovery/calculator/, net-sheet, compare, property, relocation, party) */
-  .section-tight:has(.tool-app) {
-    padding-block: 14px !important;
-  }
-
-  .tool-panel.tool-app {
-    max-width: none;
+  .depth-polished:not(.positioning-proof) .depth-chapter {
     padding: 16px 20px;
   }
 
-  .tool-app .tool-note {
-    margin: 0 0 8px;
-    font-size: 13px;
-    line-height: 1.38;
+  .depth-polished:not(.positioning-proof) .depth-chapter h3 {
+    font-size: 18px;
+    line-height: 1.26;
+    margin-bottom: 6px;
   }
 
-  .tool-app form {
-    gap: 8px;
-  }
-
-  .tool-app fieldset {
-    padding: 9px 12px 10px;
+  .depth-polished:not(.positioning-proof) .depth-chapter p {
+    font-size: 15px;
+    line-height: 1.44;
     margin: 0;
   }
 
-  .tool-app fieldset legend {
-    font-size: 14px;
+  .depth-polished.depth-count-6 .depth-chapters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 18px;
+  }
+
+  .depth-polished.depth-count-6 .depth-chapter {
+    padding: 15px 18px;
+  }
+
+  .depth-polished:not(.positioning-proof) .depth-links {
+    margin-top: 16px;
+    padding-top: 14px;
+  }
+
+  /* Unpolished 1/2/3-chapter .depth-block at bottom of inner pages: responsive auto-fit grid */
+  section.depth-block:not(.depth-polished) {
+    padding: 24px 34px;
+    margin-block: 20px;
+  }
+
+  section.depth-block:not(.depth-polished) h2 {
+    font-size: clamp(26px, 2.2vw, 32px);
+    line-height: 1.12;
+    margin: 6px 0 0;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-intro p {
+    font-size: 15.5px;
+    line-height: 1.45;
+    margin-block: 6px 0;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-chapters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px 20px;
+    margin-top: 16px;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-chapter {
+    padding: 16px 18px;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-chapter h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-chapter p {
+    font-size: 15px;
+    line-height: 1.44;
+    margin: 0;
+  }
+
+  section.depth-block:not(.depth-polished) .depth-links {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  /* 4. Homepage Featured Communities: 3x2 Full-Bleed Luxury Overlay Cards (208px tall) */
+  .section.platform-communities {
+    padding-block: 30px;
+  }
+
+  .platform-communities .platform-section-head,
+  .platform-communities .section-head {
+    margin-bottom: 16px;
+  }
+
+  .platform-communities .platform-place-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 20px;
+  }
+
+  .home .platform-communities .place-card {
+    position: relative;
+    min-height: 208px;
+    height: 208px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: none;
+    background: #202427;
+    box-shadow: 0 10px 24px rgba(32, 36, 39, 0.10);
+  }
+
+  .home .platform-communities .place-card .place-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .home .platform-communities .place-card .place-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home .platform-communities .place-card .place-card-body {
+    position: relative;
+    z-index: 2;
+    padding: 44px 22px 18px;
+    background: linear-gradient(180deg, rgba(20, 24, 28, 0) 0%, rgba(20, 24, 28, 0.88) 72%);
+  }
+
+  .home .platform-communities .place-card h3,
+  .home .platform-communities .place-card h3 a {
+    color: #ffffff;
+    font-size: 27px;
+    line-height: 1.12;
+    margin: 0;
+  }
+
+  .home .platform-communities .place-card p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15.5px;
+    line-height: 1.4;
+    margin: 4px 0 0;
+    min-height: 0;
+  }
+
+  .home .platform-communities .place-card .place-card-links {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 14.5px;
+  }
+
+  .home .platform-communities .place-card .place-card-links a {
+    color: #7ee3df;
+    font-weight: 700;
+  }
+
+  /* 5. Homepage Team Preview (4-Column Full-Scale Portraits) */
+  .section.team-section {
+    padding-block: 38px;
+  }
+
+  .team-section .section-head {
+    margin-bottom: 20px;
+  }
+
+  .team-section .agent-card img {
+    height: 236px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* 6. Homepage Colorado Journal & /blogs/ Media Cards:
+        2x3 Horizontal Editorial Cards (176x130 natural 4:3 photo + full-size 19px title) */
+  .section.journal-section {
+    padding-block: 28px;
+  }
+
+  .journal-section .section-head {
+    margin-bottom: 16px;
+  }
+
+  .journal-section .blog-grid,
+  .blog-category-section .blog-grid-media,
+  .blog-category-section .blog-grid-mixed {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 20px;
+  }
+
+  .blog-category-section .blog-grid-editorial {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 18px;
+  }
+
+  .blog-card.has-media {
+    display: grid;
+    grid-template-columns: 176px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding: 10px 16px 10px 10px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(32, 36, 39, 0.10);
+  }
+
+  .blog-card.has-media .blog-card-media {
+    display: block;
+    width: 176px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .blog-card.has-media .blog-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  .blog-card:not(.has-media) {
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(32, 36, 39, 0.10);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card .blog-card-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+  }
+
+  .blog-card .blog-card-body .eyebrow {
+    font-size: 11.5px;
     margin-bottom: 5px;
   }
 
-  .tool-app .form-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 7px 11px;
+  .blog-card .blog-card-body h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    margin: 0 0 6px;
   }
 
-  .tool-app .field {
-    gap: 3px;
-    font-size: 12px;
-  }
-
-  .tool-app .field input,
-  .tool-app .field select {
-    min-height: 34px;
-    padding: 5px 9px;
-    font-size: 13.5px;
-  }
-
-  .tool-app .field textarea {
-    min-height: 50px;
-    height: 54px;
-    padding: 6px 9px;
-    font-size: 13.5px;
-  }
-
-  .tool-app .field.tool-wide {
-    grid-column: span 2;
-  }
-
-  .tool-compare-inputs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    align-items: start;
-  }
-
-  .tool-compare-inputs .form-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px 9px;
-  }
-
-  .tool-compare-inputs .field.tool-wide {
-    grid-column: 1 / -1;
-  }
-
-  .tool-compare-inputs .field textarea {
-    min-height: 44px;
-    height: 46px;
-  }
-
-  .tool-app button.btn,
-  .tool-actions .btn {
-    min-height: 42px;
-    padding: 9px 18px;
-  }
-
-  .tool-explainer {
-    padding-block: 24px;
-  }
-
-  .tool-faq {
-    padding-block: 32px;
-  }
-
-  .tool-faq h2 {
-    margin: 6px 0 14px;
-    font-size: 28px;
-  }
-
-  .tool-faq summary {
-    padding: 13px 0;
-    font-size: 16px;
-  }
-
-  .tool-faq details p {
-    font-size: 14.5px;
-    line-height: 1.52;
-    margin-bottom: 12px;
-  }
-
-  /* About, Community & Article Editorial Grids, Sticky Sidebar & Resource Context */
-  .values-editorial-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px 16px;
-  }
-
-  .values-editorial-grid .editorial-point {
-    padding: 14px 16px;
-  }
-
-  .values-editorial-grid .editorial-point h3 {
-    font-size: 17px;
-    margin-bottom: 4px;
-  }
-
-  .values-editorial-grid .editorial-point p {
-    font-size: 13.5px;
-    line-height: 1.42;
-    margin: 0;
-  }
-
-  .article-layout .side-card {
-    padding: 18px 20px;
-    gap: 8px;
-  }
-
-  .article-layout .side-card .reading-guide {
-    max-height: 220px;
-    overflow-y: auto;
-    padding-bottom: 8px;
-    margin-bottom: 4px;
-  }
-
-  .article-layout .side-card .reading-guide a {
-    padding: 4px 0;
-    font-size: 13px;
-    line-height: 1.3;
-  }
-
-  .article-layout .side-card h3 {
-    font-size: 20px;
-    margin: 2px 0;
-  }
-
-  .article-layout .side-card p {
-    font-size: 13.5px;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  .article-layout .side-card .btn {
-    min-height: 40px;
-    padding: 8px 14px;
-    font-size: 13.5px;
-  }
-
-  .article-layout .side-card ul {
-    margin-top: 4px;
-    gap: 4px;
-  }
-
-  .article-layout .side-card li a {
-    font-size: 13px;
-    padding: 3px 0;
-  }
-
-  .resource-context {
-    padding: 22px 26px;
-  }
-
-  .resource-context h2 {
-    font-size: 24px;
-    margin: 4px 0 8px;
-  }
-
-  .resource-context > p {
-    font-size: 14.5px;
-    line-height: 1.48;
-    margin-bottom: 12px;
-  }
-
-  .resource-context .hub-reading {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin: 12px 0;
-  }
-
-  .resource-context .hub-reading li {
-    padding: 12px 14px;
-    margin: 0;
-  }
-
-  .resource-context .resource-context-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-    margin-top: 10px;
-  }
-
-  /* Explore Longform on /communities/ and /home-styles/ */
-  .explore-expanded .explore-longform {
-    padding-block: 28px 36px;
-  }
-
-  .explore-expanded .explore-longform .explore-reading {
-    max-width: none;
-  }
-
-  .explore-expanded .explore-chapter {
-    padding: 24px 0;
-  }
-
-  .explore-expanded .explore-chapter h2 {
-    font-size: clamp(24px, 2.3vw, 32px);
-    margin-bottom: 12px;
-  }
-
-  .explore-expanded .explore-chapter p,
-  .explore-expanded .explore-faq p {
-    font-size: 16px;
-    line-height: 1.62;
-    margin-bottom: 12px;
-  }
-
-  .explore-expanded .explore-faq {
-    padding: 28px 0 20px;
-  }
-
-  .explore-expanded .explore-faq summary {
-    padding: 14px 0;
-    font-size: 16.5px;
-  }
-
-  /* Conversion Funnel Pages (/contact/, /sell/home-valuation/, /buy/consultation/, /sell/consultation/) */
-  .interior-refresh .conversion-hero {
-    padding-block: 14px 20px;
-    gap: 32px;
-  }
-
-  .interior-refresh .conversion-hero h1 {
-    font-size: clamp(28px, 2.8vw, 42px);
-    margin-bottom: 8px;
-  }
-
-  .interior-refresh .conversion-hero p {
-    font-size: 16px;
-    line-height: 1.48;
-  }
-
-  .interior-refresh .conversion-hero-photo img {
-    height: 196px;
-  }
-
-  .conversion-layout {
-    gap: 32px;
-    padding-bottom: 24px;
-    align-items: start;
-  }
-
-  .funnel-form,
-  .funnel-success {
-    padding: 18px 24px;
-  }
-
-  .funnel-progress {
-    margin: 6px 0 10px;
-  }
-
-  .funnel-form .funnel-step-title {
-    font-size: clamp(20px, 1.8vw, 25px);
-    margin-bottom: 4px;
-  }
-
-  .funnel-step-description {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .funnel-form .delivery-notice {
-    padding: 8px 12px;
+  .blog-card .blog-card-body p {
+    font-size: 15px;
+    line-height: 1.45;
     margin: 0 0 10px;
-    font-size: 12.5px;
-    line-height: 1.38;
-  }
-
-  .funnel-fields {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px 12px;
-    align-items: start;
-  }
-
-  .funnel-fields > .funnel-question,
-  .funnel-fields > .funnel-field.wide,
-  .funnel-fields > .funnel-field:has(input[type="checkbox"]) {
-    grid-column: 1 / -1;
-  }
-
-  .funnel-question legend {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  .funnel-question .selection-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 8px;
-  }
-
-  .selection-card {
-    min-height: 40px;
-    padding: 8px 12px;
-    font-size: 13.5px;
-  }
-
-  .selection-card.selected {
-    padding: 7px 11px;
-  }
-
-  .funnel-field label {
-    font-size: 12.5px;
-    margin-bottom: 4px;
-  }
-
-  .funnel-field input:not([type="checkbox"]):not([type="radio"]),
-  .funnel-field select {
-    min-height: 38px;
-    padding: 7px 10px;
-    font-size: 14px;
-  }
-
-  .funnel-field textarea {
-    min-height: 60px;
-    height: 64px;
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  .funnel-actions {
-    margin-top: 12px;
-    padding-top: 10px;
-  }
-
-  .funnel-actions .btn {
-    min-height: 42px;
-    padding: 9px 18px;
-  }
-
-  .funnel-privacy {
-    margin-top: 6px;
-    font-size: 12px;
-  }
-
-  .conversion-content {
-    padding-block: 24px 32px;
-    gap: 20px 36px;
-  }
-
-  /* Blog Catalog (/blogs/) — 4 semantic category sections, each fitting 1 screen */
-  .blog-toolbar-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px 18px;
-    padding: 12px 0 8px !important;
-    margin-bottom: 8px;
-  }
-
-  .blog-toolbar-bar label.eyebrow,
-  .blog-toolbar-bar select,
-  .blog-toolbar-bar .journal-count {
-    margin: 0 !important;
-  }
-
-  .blog-toolbar-bar select {
-    min-height: 40px;
-    padding: 6px 14px;
-  }
-
-  .blog-category-section {
-    padding: 18px 0 22px;
-    border-top: 1px solid #e2e7e6;
-    scroll-margin-top: 112px;
-  }
-
-  .blog-category-head {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    margin-bottom: 12px;
-  }
-
-  .blog-category-head h2 {
-    font-size: clamp(22px, 2vw, 28px);
-    margin: 0;
-  }
-
-  .interior-refresh .journal-catalog {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 10px 12px;
-  }
-
-  .interior-refresh .journal-catalog .blog-card {
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .interior-refresh .journal-catalog .blog-card > a:has(img),
-  .interior-refresh .journal-catalog .blog-card > img {
-    display: none;
-  }
-
-  .interior-refresh .journal-catalog .blog-card .eyebrow {
-    font-size: 10px;
-    line-height: 1.2;
-  }
-
-  .interior-refresh .journal-catalog .blog-card h3 {
-    font-size: 14.5px;
-    line-height: 1.24;
-    margin: 5px 0 4px;
-  }
-
-  .interior-refresh .journal-catalog .blog-card p {
-    font-size: 12.5px;
-    line-height: 1.35;
-    margin-bottom: 6px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .interior-refresh .journal-catalog .blog-card .text-link {
+  .blog-card .blog-card-body .text-link {
     margin-top: auto;
-    font-size: 12.5px;
-  }
-}
-
-/* Medium-width laptop adaptation (901px – 1200px) so columns never feel tight */
-@media (min-width: 901px) and (max-width: 1200px) {
-  .team-page .agent-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    font-size: 15px;
+    font-weight: 700;
   }
 
-  .communities-grid {
+  .blog-toolbar-bar,
+  .directory-toolbar-bar {
+    padding-block: 20px 12px !important;
+  }
+
+  .blog-category-section {
+    padding-block: 16px 20px;
+    border-top: 1px solid rgba(32, 36, 39, 0.08);
+  }
+
+  .blog-category-head {
+    margin-bottom: 18px;
+  }
+
+  .blog-category-head h2 {
+    font-size: clamp(28px, 2.3vw, 34px);
+    margin: 4px 0 0;
+  }
+
+  /* 7. Homepage & Service FAQs: 2-Column Accordion Grid with Full-Scale 17px-18px Questions */
+  .section.home-faq-section {
+    padding-block: 44px;
+  }
+
+  .home-faq-layout {
+    grid-template-columns: minmax(260px, 0.32fr) minmax(0, 0.68fr);
+    gap: 36px;
+  }
+
+  .home-faq-list,
+  .service-faq div:has(> details),
+  .tool-faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    align-items: start;
+  }
+
+  .home-faq-list summary {
+    padding: 18px 0;
+    font-size: 17.5px;
+  }
+
+  .home-faq-list details p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0 0 18px;
+    padding-right: 20px;
+  }
+
+  .service-faq {
+    padding-block: 36px;
+  }
+
+  /* 8. /agents/ Directory: 2 Standalone 4-Column Portrait Sections (Matches Homepage Scale) */
+  .agent-group-section {
+    padding-block: 26px 34px;
+    border-top: 1px solid rgba(32, 36, 39, 0.08);
+  }
+
+  .agent-group-head {
+    margin-bottom: 18px;
+  }
+
+  .agent-group-head h2 {
+    font-size: clamp(28px, 2.3vw, 34px);
+    margin: 4px 0 0;
+  }
+
+  .agent-group-section .agent-grid {
+    display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px 24px;
   }
 
-  .interior-refresh .tool-catalog {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .agent-group-section .agent-card img {
+    width: 100%;
+    height: 222px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 12px;
   }
 
-  .interior-refresh .journal-catalog {
+  .agent-group-section .agent-card h3 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .agent-group-section .agent-card p,
+  .agent-group-section .agent-card .agent-role {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* 9. /communities/ Directory: 3 Regional 3-Column Sections of 6 Full-Scale Cards */
+  .community-region-section {
+    padding-block: 28px 34px;
+    border-top: 1px solid rgba(32, 36, 39, 0.08);
+  }
+
+  .community-region-head {
+    margin-bottom: 18px;
+  }
+
+  .community-region-head h2 {
+    font-size: clamp(28px, 2.3vw, 34px);
+    margin: 4px 0 0;
+  }
+
+  .community-region-section .communities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 24px;
+    margin-top: 0 !important;
+  }
+
+  .community-region-section .community-card .photo {
+    width: 100%;
+    height: 186px;
+    aspect-ratio: auto;
+  }
+
+  .community-region-section .community-card .photo img {
+    width: 100%;
+    height: 186px;
+    object-fit: cover;
+  }
+
+  .community-region-section .community-card h3 {
+    font-size: 22px;
+    margin-top: 12px;
+  }
+
+  .community-region-section .community-card p {
+    font-size: 15px;
+    line-height: 1.46;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 10. /discovery/ & /home-styles/ 3-Column Full-Scale Card Groups */
+  .catalog-group-section {
+    padding-block: 34px 40px;
+    border-top: 1px solid rgba(32, 36, 39, 0.08);
+  }
+
+  .catalog-group-head {
+    margin-bottom: 20px;
+  }
+
+  .catalog-group-head h2 {
+    font-size: clamp(28px, 2.3vw, 34px);
+    margin: 4px 0 0;
+  }
+
+  main .section-tight .tool-catalog,
+  .catalog-group-section .tool-catalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 24px;
+  }
+
+  /* 11. /buy/ & /sell/ Split Service Blocks: Single-Row Full-Scale Groups */
+  .positioning-services-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+    padding-block: 28px;
+  }
+
+  .positioning-services-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .tool-app .form-grid {
+  .positioning-services-part2 {
+    border-top: 1px solid rgba(32, 36, 39, 0.08);
+  }
+
+  .positioning-services-split .positioning-service {
+    padding: 22px 24px;
+    margin: 0;
+  }
+
+  .positioning-services-split .positioning-service h3 {
+    font-size: 21px;
+  }
+
+  .positioning-services-split .positioning-service p,
+  .positioning-services-split .positioning-service li {
+    font-size: 15.5px;
+    line-height: 1.48;
+  }
+
+  /* 12. Lead Questionnaires & Contact Forms (.conversion-layout):
+         2-Column Form Fields at Full-Size 46px Inputs & 16px Font */
+  .conversion-layout {
+    align-items: start;
+    padding-block: 16px;
+  }
+
+  .conversion-layout .funnel-form {
+    padding: 22px 28px;
+  }
+
+  .conversion-layout .funnel-step-title {
+    margin-bottom: 12px;
+    font-size: 28px;
+  }
+
+  .conversion-layout .funnel-fields {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+  }
+
+  .conversion-layout .funnel-question,
+  .conversion-layout .funnel-field:has(textarea),
+  .conversion-layout .funnel-field:has(.funnel-consent) {
+    grid-column: 1 / -1;
+  }
+
+  .conversion-layout .funnel-choices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .conversion-layout .funnel-choice {
+    padding: 11px 14px;
+    min-height: 44px;
+  }
+
+  .conversion-layout .funnel-field > label,
+  .conversion-layout .funnel-question > legend {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .conversion-layout .funnel-field input:not([type="checkbox"]),
+  .conversion-layout .funnel-field select {
+    min-height: 46px;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  .conversion-layout .funnel-field textarea {
+    min-height: 70px;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  /* 13. Interactive Planning Tools & Calculators (#tool-root):
+         4-Column Aligned Field Grid at Full-Size 44px Inputs & 16px Font */
+  main .section-tight:has(#tool-root) {
+    padding-block: 10px 14px;
+  }
+
+  .tool-panel.tool-app {
+    padding: 14px 22px;
+  }
+
+  .tool-panel .tool-note {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+  }
+
+  .tool-panel form[data-form="calculator"] .form-grid,
+  .tool-panel form[data-form="net-sheet"] .form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px 16px;
+    align-items: end;
+  }
+
+  .tool-panel fieldset {
+    margin: 0 0 8px;
+    padding: 8px 14px 10px;
+  }
+
+  .tool-panel fieldset legend {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .tool-panel label {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .tool-panel input:not([type="checkbox"]):not([type="radio"]),
+  .tool-panel select {
+    min-height: 44px;
+    padding: 9px 12px;
+    font-size: 16px;
+  }
+
+  /* 14. Homepage Video Band */
+  .video-section {
+    padding-block: 44px;
+  }
+}
+
+/* Mobile & small-tablet responsive safety for horizontal blog cards */
+@media (max-width: 1023px) {
+  .blog-card.has-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card.has-media .blog-card-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .blog-card.has-media .blog-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

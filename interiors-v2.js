@@ -5,6 +5,25 @@
     if(count)count.textContent=n+' '+(n===1?'guide':'guides')+' to explore';
     document.querySelectorAll('[data-blog-section]').forEach(sec=>{sec.hidden=!!filter.value&&sec.dataset.blogSection!==filter.value;});
   });
+  const agentFilter=document.getElementById('agent-filter');
+  if(agentFilter)agentFilter.addEventListener('input',()=>{
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('[data-agent-group]').forEach(sec=>{
+        const visible=[...sec.querySelectorAll('[data-agent]')].some(c=>!c.hidden);
+        sec.hidden=!visible;
+      });
+    });
+  });
+  const syncCommunityRegions=()=>{
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('[data-community-region]').forEach(sec=>{
+        const visible=[...sec.querySelectorAll('[data-community]')].some(c=>!c.hidden);
+        sec.hidden=!visible;
+      });
+    });
+  };
+  document.getElementById('community-filter')?.addEventListener('input',syncCommunityRegions);
+  document.getElementById('community-tag')?.addEventListener('change',syncCommunityRegions);
   const steps=[...document.querySelectorAll('[data-process-step]')],number=document.querySelector('[data-process-number]');
   steps.forEach(step=>step.addEventListener('toggle',()=>{if(step.open&&number)number.textContent=String(step.dataset.processStep).padStart(2,'0');}));
   const video=document.querySelector('.service-film video');
