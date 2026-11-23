@@ -1,6 +1,10 @@
 (() => {
   const filter=document.getElementById('blog-filter'),count=document.querySelector('.journal-count');
-  if(filter&&count)filter.addEventListener('change',()=>{const n=[...document.querySelectorAll('[data-blog-category]')].filter(c=>!filter.value||c.dataset.blogCategory===filter.value).length;count.textContent=n+' '+(n===1?'guide':'guides')+' to explore';});
+  if(filter)filter.addEventListener('change',()=>{
+    const n=[...document.querySelectorAll('[data-blog-category]')].filter(c=>!filter.value||c.dataset.blogCategory===filter.value).length;
+    if(count)count.textContent=n+' '+(n===1?'guide':'guides')+' to explore';
+    document.querySelectorAll('[data-blog-section]').forEach(sec=>{sec.hidden=!!filter.value&&sec.dataset.blogSection!==filter.value;});
+  });
   const steps=[...document.querySelectorAll('[data-process-step]')],number=document.querySelector('[data-process-number]');
   steps.forEach(step=>step.addEventListener('toggle',()=>{if(step.open&&number)number.textContent=String(step.dataset.processStep).padStart(2,'0');}));
   const video=document.querySelector('.service-film video');
