@@ -1,0 +1,19 @@
+.town-game{background:#173739;color:#fff;padding:clamp(44px,5.7vw,90px) max(6vw,20px);overflow:hidden}
+.town-game[hidden],.town-game [hidden]{display:none!important}
+.town-inside{margin:auto;max-width:1190px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.91fr);align-items:center;gap:clamp(44px,7vw,112px)}
+.town-photos{position:relative;margin:12px 10px;isolation:isolate}
+.town-photos:before{content:"";position:absolute;inset:1px;background:#86b5b0;border:1px solid #abd1ca;transform:rotate(3deg);z-index:-1}
+.town-print{padding:clamp(8px,1vw,14px);background:#fcf8ee;transform:rotate(-3deg);box-shadow:0 6px 18px #10262866}
+.town-print img{display:block;width:100%;height:auto;aspect-ratio:1.32;object-fit:cover}
+.town-stamp{position:absolute;right:-18px;top:-22px;width:71px;height:71px;transform:rotate(10deg);background:#f4f3d9;color:#214d48;border-radius:50%;stroke:currentColor;stroke-width:1.8}
+.town-kicker,.town-meter{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#aae3da}
+.town-game h2{margin:13px 0 20px;color:white;font-family:inherit;font-size:clamp(43px,4.65vw,74px);line-height:.97;letter-spacing:-.055em;font-weight:900}
+.town-meter{display:flex;gap:14px;align-items:center;letter-spacing:.1em}.town-meter i{width:78px;height:3px;background:linear-gradient(to right,#9cdfd3 calc(var(--round)*33.333%),#54706e 0)}
+.town-clue,.town-reveal p,.town-finish p{font-size:clamp(15px,1.3vw,18px);line-height:1.45;color:#f3f7f6;margin:14px 0 18px;max-width:43ch}
+.town-choices{display:flex;flex-wrap:wrap;gap:8px}
+.town-game button{font:inherit;cursor:pointer;min-height:44px;border-radius:5px;font-weight:700}
+.town-choices button{display:inline-flex;align-items:center;gap:7px;background:transparent;color:#fff;border:1px solid #789b98;padding:8px 12px;font-size:15px}
+.town-choices b{color:#9cddd3;font-size:11px}.town-choices button:hover,.town-choices button:focus-visible{background:#295451;border-color:#a6e3d8}
+.town-reveal strong,.town-finish h3{display:block;color:#b5ede2;font-size:24px;line-height:1.15;margin:0}.town-reveal p,.town-finish p{font-size:16px;margin:6px 0 12px}
+.town-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.town-actions button{color:#153a37;background:#9ae1d4;border:0;padding:9px 17px;font-size:15px}.town-actions a{color:white;text-underline-offset:4px;font-size:15px}.town-game :focus-visible{outline:2px solid #f7dda2;outline-offset:3px}.town-finish h3{font-size:36px;margin-top:9px}
+@media(max-width:760px){.town-game{padding:36px 22px 42px}.town-inside{grid-template-columns:1fr;gap:25px;max-width:500px}.town-photos{margin:4px 9px}.town-print img{aspect-ratio:2.5}.town-stamp{width:48px;height:48px;top:-10px;right:-10px}.town-game h2{font-size:42px;margin:8px 0 14px}.town-game h2 br{display:none}.town-game h2 br:after{content:" "}.town-game h2{max-width:11ch}.town-clue{margin:8px 0 13px}.town-choices button{padding:7px 10px}.town-choices{gap:6px}}
