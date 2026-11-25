@@ -26,7 +26,8 @@
   window.epAttribution=()=>({...attribution,pageUrl:pageUrl()});
   const ga4Id=/^G-[A-Z0-9]+$/.test(settings.ga4Id||'')?settings.ga4Id:'';
   const allowedHosts=Array.isArray(settings.allowedHosts)?settings.allowedHosts:['www.edprather.com'];
-  const configured=!!ga4Id&&!config.reviewOnly&&allowedHosts.includes(location.hostname);
+  const gtmId=/^GTM-[A-Z0-9]+$/.test(settings.gtmId||'')?settings.gtmId:'';
+  const configured=!!(ga4Id||gtmId)&&!config.reviewOnly&&allowedHosts.includes(location.hostname);
   let loaded=false,pageviewSent=false,box=null,preferences=null;
   function gtag(){(window.dataLayer=window.dataLayer||[]).push(arguments);}
   function enable(){
@@ -44,10 +45,16 @@
       const options={send_page_view:false,page_location:pageUrl(),page_referrer:safeReferrer(document.referrer),allow_google_signals:false,allow_ad_personalization_signals:false,user_data:null};
       const campaignMap={utm_source:'campaign_source',utm_medium:'campaign_medium',utm_campaign:'campaign_name',utm_content:'campaign_content',utm_term:'campaign_term'};
       for(const [from,to]of Object.entries(campaignMap))if(attribution[from])options[to]=attribution[from];
-      gtag('config',ga4Id,options);
-      const script=document.createElement('script');script.async=true;script.dataset.edAnalytics='true';script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ga4Id);document.head.append(script);
+      if(gtmId){
+        // Google Tag Manager loads the Analytics and Ads tags after the visitor allows analytics.
+        window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js',ep_landing_page:attribution.landingPage,ep_referrer:attribution.referrer});
+        const script=document.createElement('script');script.async=true;script.dataset.edAnalytics='true';script.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(gtmId);document.head.append(script);
+      }else{
+        gtag('config',ga4Id,options);
+        const script=document.createElement('script');script.async=true;script.dataset.edAnalytics='true';script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ga4Id);document.head.append(script);
+      }
     }else gtag('consent','update',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-    if(!pageviewSent){pageviewSent=true;gtag('event','page_view',{send_to:ga4Id,user_data:null,page_location:pageUrl(),page_referrer:safeReferrer(document.referrer),page_title:document.title});}
+    if(!pageviewSent&&!gtmId){pageviewSent=true;gtag('event','page_view',{send_to:ga4Id,user_data:null,page_location:pageUrl(),page_referrer:safeReferrer(document.referrer),page_title:document.title});}
   }
   function disable(){
     consent=false;
@@ -83,7 +90,10 @@
     const event=name==='generate_lead'?eventNames[funnel]:name;
     const clean={funnel,lead_type:funnel,event_id:requestId,...(name==='external_home_search_click'?{destination:'cohousehunters.com'}:{})};
     window.dispatchEvent(new CustomEvent('ed:conversion',{detail:{event,...clean}}));
-    if(consent&&configured&&loaded)gtag('event',event,{...clean,send_to:ga4Id,user_data:null,page_location:pageUrl(),page_referrer:safeReferrer(document.referrer)});
+    if(consent&&configured&&loaded){
+      if(gtmId)window.dataLayer.push({event,...clean,page_location:pageUrl()});
+      if(ga4Id)gtag('event',event,{...clean,send_to:ga4Id,user_data:null,page_location:pageUrl(),page_referrer:safeReferrer(document.referrer)});
+    }
   };
   if(configured){
     preferences=document.createElement('button');preferences.type='button';preferences.className='analytics-preferences';preferences.textContent='Analytics preferences';preferences.addEventListener('click',()=>openPreferences(true));
